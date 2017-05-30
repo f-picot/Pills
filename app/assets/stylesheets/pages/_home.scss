@@ -11,30 +11,20 @@ html body {
   margin: 0;
 }
 
-.title{
-  top: 25%;
-  color: $blue;
-  left: 47%;
-  position: absolute;
-  font-size: -webkit-xxx-large;
-}
-
-.subtitle{
-  top: 30%;
-  color: $green;
-  left: 38%;
-  position: absolute;
-  font-size: -webkit-xxx-large;
-}
-
 .container {
-  display: block;
-  position: relative;
   width: 100%;
+}
+
+.sky {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: calc(100vh - 70px);
   background: linear-gradient(to bottom, #020107 0%, #201b46 100%);
 }
-.container .text {
+
+.sky .text {
   color: #FFF;
   position: absolute;
   top: 50%;
@@ -43,6 +33,22 @@ html body {
   font-size: 20px;
   font-family: sans-serif;
   font-weight: bold;
+}
+
+.title{
+  // top: 25%;
+  color: $blue;
+  // left: 47%;
+  // position: absolute;
+  font-size: -webkit-xxx-large;
+}
+
+.subtitle{
+  // top: 30%;
+  color: $green;
+  // left: 38%;
+  // position: absolute;
+  font-size: -webkit-xxx-large;
 }
 
 .stars {
@@ -138,3 +144,4 @@ html body {
     height: 800px;
   }
 }
+
