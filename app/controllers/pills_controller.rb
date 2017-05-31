@@ -11,8 +11,8 @@ class PillsController < ApplicationController
         marker.lng location[0].longitude
         marker.picture ({
                         "url" => ApplicationController.helpers.asset_path("pinpon.png"),
-                        "width" => 100,
-                        "height" => 100,
+                        "width" => 50,
+                        "height" => 50,
         })
         # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
       end
