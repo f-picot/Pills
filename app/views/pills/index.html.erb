@@ -1,6 +1,6 @@
+
 <%= @address %>
 <div class="map" id="map" style="width: 100%; height: 200px;"></div>
-
 <% content_for(:after_js) do %>
   <script>
     $(document).ready(function() {
@@ -209,7 +209,6 @@
     });
   </script>
 <% end %>
-
 <div class="order-banner">
   <div class="map-text">
     <p><%= @address %></p>
