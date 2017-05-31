@@ -1,5 +1,39 @@
-<h1>Pills#index</h1>
-<p>Find me in app/views/pills/index.html.erb</p>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @pills.each do |pill| %>
+      <div class="col-xs-12 col-sm-6 col-md-4" >
+        <div class="card">
+          <div class="card-picture">
+            <div class="frame-picture">
+                <%= image_tag pill.photo %>
+            </div>
+          </div>
+          <div class="card-lab">
+            <div class="avatar-bordered">
+              <%= pill.brandphoto %>
+            </div>
+            <p class="underlined"> <%= pill.brand %> </p>
+          </div>
+          <div class="card-description">
+            <h2> <%= pill.name %></h2>
+            <p> <%= pill.description  %> </p>
+          </div>
+          <div class="card-order">
+            <div class="capacity">
+              <p><%= pill.capacity %>
+              <!-- ajouter le bouton panier -->
+            </div>
+            <div class="price">
+              <p><%= pill.price.to_s.gsub(".",",") %> € </p>
+            </div>
+          </div>
+        </div>
+      </div>
+        <% end %>
+    </div>
+  </div>
+</div>
 
 <%= @address %>
 <div id="map" style="width: 100%; height: 600px;"></div>

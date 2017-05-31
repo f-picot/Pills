@@ -6,55 +6,65 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-doliprane = Pill.new(
-  name: "Doliprane",
+doliprane = Pill.create!(
+  name: "Doliprane Douleurs & fièvres",
   brand: "Sanofi Aventis",
   description: "Paracetamol, médicament pour les maux de tête",
   price: 2.10,
   category: "Fièvres",
   stock: 100,
+  photo: "doliprane.png",
+  brandphoto: "sanofi.png",
+  capacity: "8 SACHETS DOSES"
   )
-doliprane.save
 
-spasfon = Pill.new(
-  name: "Spasfon",
+spasfon = Pill.create!(
+  name: "Spasfon Douleurs spasmodiques",
   brand: "Teva",
-  description: "Douleurs spasmodiques",
+  description: "Produit de référence indiqué contre les spasmes intestinaux",
   price: 2.99,
   category: "Douleurs",
   stock: 50,
+  photo: "spasfon.png",
+  brandphoto: "teva.png",
+  capacity: "30 COMPRIMES"
   )
-spasfon.save
 
-aspegic = Pill.new(
+aspegic = Pill.create!(
   name: "Aspegic",
   brand: "Sanofi Aventis",
   description: "Médicament pour les maux de tête",
   price: 5.50,
   category: "Fièvres",
   stock: 70,
+  photo: "aspegic.png",
+  brandphoto: "sanofi.png",
+  capacity: "30 SACHETS DOSES"
   )
-aspegic.save
 
-smecta = Pill.new(
+smecta = Pill.create!(
   name: "Smecta",
   brand: "Ipsen",
   description: "Médicament pour les maux de ventre",
   price: 4.35,
   category: "Douleurs",
   stock: 40,
+  photo: "smecta.png",
+  brandphoto: "ipsen.png",
+  capacity: "60 SACHETS"
   )
-smecta.save
 
-strepsils = Pill.new(
+strepsils = Pill.create!(
   name: "Strepsils",
   brand: "Reckitt Benckiser",
   description: "Médicament pour les maux de gorge",
   price: 5.20,
   category: "Douleurs",
   stock: 80,
+  photo: "strepsils.png",
+  brandphoto: "reckitt.png",
+  capacity: "24 PASTILLES"
   )
-strepsils.save
 
 
 
