@@ -250,3 +250,39 @@
     </div>
   </div>
 </div>
+
+<% if @cart.cart_items.any? %>
+  <h2>Vos Pills <%= @cart.cart_items.count %></h2>
+  <!-- afficher @cart.delivery_location -->
+  <!-- afficher @cart.delivery_time -->
+  <ul>
+    <% @cart.cart_items.each do |cart_item| %>
+      <li><%= cart_item.quantity %> -
+          <%= cart_item.pill.name %> :
+          <%= cart_item.pill.price * cart_item.quantity %> euros</li>
+    <% end %>
+  </ul>
+  <p>Total : <%= @cart.total %> euros</p>
+<% else %>
+  <h2>Votre panier est vide</h2>
+  <p>Ajoutez des produits à votre commande</p>
+<% end %>
+
+<h1>Add pills to cart</h1>
+<ul>
+  <% @pills.each do |pill| %>
+    <li><%= pill.name %></li>
+    <div class="cart-control">
+      <% if @cart.cart_items.where(pill_id: pill.id).first %>
+        <%= simple_form_for [pill, @cart.cart_items.where(pill_id: pill.id).first], method: :patch do |f| %>
+          <%= f.hidden_field :cart_id, value: @cart.id %>
+          <%= f.submit "-", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+      <%= simple_form_for [pill, @cart_item] do |f| %>
+        <%= f.hidden_field :cart_id, value: @cart.id %>
+        <%= f.submit "+", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+</ul>
