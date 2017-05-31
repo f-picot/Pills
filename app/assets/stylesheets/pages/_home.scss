@@ -9,6 +9,31 @@ body {
   background-color: #F9F9F9;
 }
 
+.title {
+  top: 25%;
+  color: $blue;
+  left: 47%;
+  position: absolute;
+  font-size: -webkit-xxx-large;
+}
+
+.subtitle {
+  top: 30%;
+  color: $green;
+  left: 38%;
+  position: absolute;
+  font-size: -webkit-xxx-large;
+}
+
+.container .home {
+  display: block;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+}
+
 /* Banner */
 
 .banner {
