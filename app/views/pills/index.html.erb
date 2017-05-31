@@ -217,7 +217,7 @@
 </div>
 
 <div class="wrapper">
-  <div class="container">
+  <div class="customcontainer">
     <div class="row">
       <% @pills.each do |pill| %>
       <div class="col-xs-12 col-sm-6 col-md-4" >
@@ -228,9 +228,7 @@
             </div>
           </div>
           <div class="card-lab">
-            <div class="avatar-bordered">
-              <%= pill.brandphoto %>
-            </div>
+            <%= image_tag(pill.brandphoto, class: "avatar-bordered") %>
             <p class="underlined"> <%= pill.brand %> </p>
           </div>
           <div class="card-description">
@@ -243,7 +241,7 @@
               <!-- ajouter le bouton panier -->
             </div>
             <div class="price">
-              <p><%= pill.price.to_s.gsub(".",",") %> € </p>
+              <p><%= pill.price %> € </p>
             </div>
           </div>
         </div>
