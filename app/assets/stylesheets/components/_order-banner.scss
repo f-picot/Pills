@@ -1,0 +1,27 @@
+.order-banner {
+  position: absolute;
+  top: 210px;
+  width: 100%;
+  text-align: center;
+}
+
+.map {
+  position: relative;
+}
+
+.map-text {
+  display: inline;
+  padding: 10px 20px;
+  background-color: $blue;
+  border-radius: 20em;
+  opacity: 0.8;
+  font-size: 16px;
+  font-weight: lighter;
+  color: white;
+}
+
+p {
+  display: inline;
+  padding: 0 7px;
+
+}
