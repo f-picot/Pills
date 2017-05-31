@@ -50,6 +50,30 @@
   height: 190px;
 }
 
+.divbutton {
+  width: 30px;
+  height: 30px;
+  background-color:#11CBD7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  border: 0;
+  margin-left: 3px;
+  &:hover {
+    background-color:#0d9ea8;
+  }
+  span {
+    color: white;
+    font-size: 20px;
+    font-family:helvetica;
+  }
+}
+
+.font {
+  line-height: 1px;
+}
+
 .frame-picture img {
   padding: 10px;
   max-height: 85%;
@@ -93,6 +117,7 @@
   font-weight: 300;
   color: #9E9E9E;
   margin-top: 0px;
+  padding: 0px;
 }
 
 .card-order {
@@ -100,8 +125,14 @@
   display: flex;
   align-items: center;
   padding: 10px 20px 10px 20px;
-  height: 80px;
-  display: inline-block;
+  height: 160px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.lastblock {
+  display: flex;
+  flex-direction: column;
 }
 
 .price {
