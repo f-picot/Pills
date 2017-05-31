@@ -20,11 +20,12 @@
             <p> <%= pill.description  %> </p>
           </div>
           <div class="card-order">
-            <div>
+            <div class="capacity">
+              <p><%= pill.capacity %>
               <!-- ajouter le bouton panier -->
             </div>
-            <div>
-              <p><%= pill.price %></p>
+            <div class="price">
+              <p><%= pill.price.to_s.gsub(".",",") %> € </p>
             </div>
           </div>
         </div>

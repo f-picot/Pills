@@ -13,7 +13,9 @@ doliprane = Pill.create!(
   price: 2.10,
   category: "Fièvres",
   stock: 100,
-  photo: "doliprane.png"
+  photo: "doliprane.png",
+  brandphoto: "sanofi.png",
+  capacity: "8 SACHETS DOSES"
   )
 
 spasfon = Pill.create!(
@@ -23,8 +25,9 @@ spasfon = Pill.create!(
   price: 2.99,
   category: "Douleurs",
   stock: 50,
-  photo: "spasfon.png"
-  brandphoto: "photo.png"
+  photo: "spasfon.png",
+  brandphoto: "teva.png",
+  capacity: "30 COMPRIMES"
   )
 
 aspegic = Pill.create!(
@@ -34,7 +37,9 @@ aspegic = Pill.create!(
   price: 5.50,
   category: "Fièvres",
   stock: 70,
-  photo: "aspegic.png"
+  photo: "aspegic.png",
+  brandphoto: "sanofi.png",
+  capacity: "30 SACHETS DOSES"
   )
 
 smecta = Pill.create!(
@@ -44,7 +49,9 @@ smecta = Pill.create!(
   price: 4.35,
   category: "Douleurs",
   stock: 40,
-  photo: "smecta.png"
+  photo: "smecta.png",
+  brandphoto: "ipsen.png",
+  capacity: "60 SACHETS"
   )
 
 strepsils = Pill.create!(
@@ -54,7 +61,9 @@ strepsils = Pill.create!(
   price: 5.20,
   category: "Douleurs",
   stock: 80,
-  photo: "strepsils.png"
+  photo: "strepsils.png",
+  brandphoto: "reckitt.png",
+  capacity: "24 PASTILLES"
   )
 
 
