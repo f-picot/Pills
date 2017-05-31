@@ -32,6 +32,7 @@ body {
 
 .container {
   width: 100%;
+
 }
 
 /* Banner */
@@ -48,14 +49,14 @@ body {
 }
 
 .banner h1 {
-  font-size: 50px;
+  font-size: 60px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   color: $blue;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
@@ -65,7 +66,7 @@ body {
 /* Search Customization */
 
 .custom-search-form{
-    margin-top:5px;
+  margin-top:5px;
 }
 
 /* Highlight effect */
@@ -105,10 +106,30 @@ body {
 /* Home Row */
 
 .home-row{
-  padding-top: 5%;
 }
 
-.headline{
+.blue-headline{
   text-align: center;
   font-family: lato;
+  color: $blue;
+}
+
+.green-headline{
+  text-align: center;
+  font-family: lato;
+  color: $green;
+}
+
+/* Containers */
+
+.green-section{
+  background-color: $green;
+  // border: 1px solid $blue;
+  padding: 15px 15px;
+}
+
+.blue-section{
+  background-color: $blue;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
