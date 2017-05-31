@@ -11,7 +11,7 @@ html body {
   margin: 0;
 }
 
-.title{
+.title {
   top: 25%;
   color: $blue;
   left: 47%;
@@ -19,7 +19,7 @@ html body {
   font-size: -webkit-xxx-large;
 }
 
-.subtitle{
+.subtitle {
   top: 30%;
   color: $green;
   left: 38%;
@@ -27,14 +27,25 @@ html body {
   font-size: -webkit-xxx-large;
 }
 
-.container {
+.container .home {
   display: block;
   position: relative;
+}
+
+.container {
   width: 100%;
+}
+
+.sky {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: calc(100vh - 70px);
   background: linear-gradient(to bottom, #020107 0%, #201b46 100%);
 }
-.container .text {
+
+.sky .text {
   color: #FFF;
   position: absolute;
   top: 50%;
@@ -43,6 +54,16 @@ html body {
   font-size: 20px;
   font-family: sans-serif;
   font-weight: bold;
+}
+
+.title{
+  color: $blue;
+  font-size: -webkit-xxx-large;
+}
+
+.subtitle{
+  color: $green;
+  font-size: -webkit-xxx-large;
 }
 
 .stars {
@@ -138,3 +159,4 @@ html body {
     height: 800px;
   }
 }
+
