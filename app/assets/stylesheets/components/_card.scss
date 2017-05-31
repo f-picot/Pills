@@ -1,16 +1,20 @@
 .avatar-bordered {
-  width: 30px;
+  width: 22px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+  border: #EBEBEB 1px;
 }
 
 .underlined {
     // animation: boxShadow 0.3s 1s cubic-bezier(0, 0, 0, 1.25) forwards;
-  margin-left: 10px;
+  margin: 0px 0px -4px 10px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: #888888;
+  line-height: 0.4rem;
+  border-bottom: 7px solid #CEF9FC;
+}
+
+.brand img {
 }
 
 .capacity p {
@@ -27,7 +31,7 @@
 .card-lab {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin: 10px 0px 13px 0px;
   padding: 15px 23px 10px 23px;
 }
 
@@ -39,6 +43,7 @@
   justify-content: center;
   align-items: center;
   border-bottom: 0.3px solid #EFF1F4;
+  height: 190px;
 }
 
 .frame-picture img {
@@ -95,7 +100,7 @@
 }
 
 .price {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
   color: #11CBD7;
 }
