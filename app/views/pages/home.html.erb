@@ -1,15 +1,37 @@
 <div class="banner">
   <div class="banner-content">
-    <h1 class="heading-home"><strong>P</strong>ills</h1>
-    <p class="p-home"><span class="highlight-container"><span class="highlight"><strong>Dé</strong>livreur de <strong>santé</p></strong></span></span>
+    <h1 class="heading-home"><span class="highlight-container"><span class="highlight"><strong>P</strong>ills</h1></span></span>
+    <p class="p-home"><strong>Dé</strong>livreur de <strong>santé</p></strong>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-sm-offset-3">
-          <div id="custom-search-input">
-            <%= render 'search-form' %>
+        <div class="col-lg-4 col-sm-offset-4">
+          <div class="input-group custom-search-form">
+            <!-- < render 'search-form' %> -->
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="home-row">
+    <div class="col-md-4 col-sm-4 text-center">
+      <%= image_tag "payment.png" %>
+      <h3 class="headline">Paiement</h3>
+    </div>
+    <div class="col-md-4 col-sm-4 text-center">
+      <%= image_tag "certificate.png" %>
+      <h3 class="headline">Pharmacie certifiée</h3>
+    </div>
+    <div class="col-md-4 col-sm-4 text-center">
+      <%= image_tag "chat.png" %>
+      <h3 class="headline">Support 24/7</h3>
     </div>
   </div>
 </div>

@@ -6,24 +6,20 @@
 body {
   // overflow-x: hidden;
   // background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
-  // background-color: #eeeeee;
+  background-color: #F9F9F9;
 }
 
-// p, h1, h2, h3 {
-//   color: white;
-// }
+/* Banner */
 
 .banner {
   color: white;
   text-align: center;
-  background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=Paris&zoom=13&scale=1&size=1200x600&maptype=roadmap&format=png&visual_refresh=true);
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://maps.googleapis.com/maps/api/staticmap?center=Paris&zoom=13&scale=1&size=640x300&maptype=roadmap&format=png&visual_refresh=true);
   height: calc(50vh - 70px);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  // background-size: cover !important;
   display: flex;
-  // overflow: hidden;
   align-items: center;
   justify-content: center;
+  // overflow: hidden;
 }
 
 .banner h1 {
@@ -41,39 +37,14 @@ body {
   color: $green;
 }
 
-#custom-search-input{
-  padding: 3px;
-  border: solid 1px #E4E4E4;
-  border-radius: 6px;
-  background-color: #fff;
-}
+/* Search Customization */
 
-#custom-search-input input{
-  border: 0;
-  box-shadow: none;
-}
-
-#custom-search-input button{
-  margin: 2px 0 0 0;
-  background: none;
-  box-shadow: none;
-  border: 0;
-  color: #666666;
-  padding: 0 8px 0 10px;
-  border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-  border: 0;
-  box-shadow: none;
-  border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-  font-size: 23px;
+.custom-search-form{
+    margin-top:5px;
 }
 
 /* Highlight effect */
+
 .highlight-container, .highlight {
   position: relative;
 }
@@ -104,4 +75,15 @@ body {
 .highlight-container .highlight {
   color: $blue;
   z-index: 4;
+}
+
+/* Home Row */
+
+.home-row{
+  padding-top: 5%;
+}
+
+.headline{
+  text-align: center;
+  font-family: lato;
 }
