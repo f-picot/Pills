@@ -43,7 +43,8 @@
 
 .frame-picture img {
   padding: 10px;
-  height: 190px;
+  max-height: 85%;
+  max-width: 85%;
 }
 .card {
   height: 400px;
