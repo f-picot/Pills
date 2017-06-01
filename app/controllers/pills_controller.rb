@@ -23,12 +23,20 @@ class PillsController < ApplicationController
     @cart_item = CartItem.new
     if params[:pill]
       if params[:pill][:name] != ""
-        @pills = Pill.where("name ILIKE ?", "%#{params[:pill][:name]}%")
+        @pills = Pill.where("name ILIKE ? OR category ILIKE ?", params[:pill][:name], params[:pill][:name])
         respond_to do |format|
           format.html { redirect_to pills_path }
           format.js
         end
       end
+    end
+
+    @categories = []
+    @pills.each do |pill|
+      if pill.category
+        @categories << pill.category
+      end
+    @categories.uniq!
     end
 
   end
