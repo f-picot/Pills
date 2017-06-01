@@ -17,6 +17,12 @@
   <% end %>
 </div>
 
+<div id="categories-container">
+  <% @categories.each do |category| %>
+    <div class="category-button" data-category="<%= category %>"><%= category %></div>
+  <% end %>
+</div>
+
 <div class="wrapper">
   <div class="customcontainer">
     <div class="row">
