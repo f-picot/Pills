@@ -32,6 +32,7 @@
 .normal-icon {
   font-size: 30px;
   margin: 8px;
+  color: white;
 }
 
 .items-count {
@@ -64,4 +65,146 @@
 .large-icon {
   font-size: 45px;
   color: white;
+  margin: 8px;
 }
+
+.filled-cart {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: $light-gray;
+}
+
+.cart-validation {
+  width: 380px;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-mycart {
+  display: block;
+  width: 95%;
+  padding: 10px;
+}
+
+.cart-recap {
+  width: 100%;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-content-header {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.cart-content {
+  color: $dark-gray;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.cart-info:hover {
+  background-color: $light-gray;
+}
+
+.cart-product:hover {
+  background-color: $light-gray;
+}
+
+.fa-times {
+  color: $light-gray;
+  font-size: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.filled-cart p {
+  margin: 0;
+}
+
+.cart-product {
+  width: 100%;
+  height: 100px;
+  border-bottom: 0.3px solid #EFF1F4;
+  color: $dark-gray;
+  background-color: white;
+}
+
+.cart-product:last-child {
+  margin-bottom: 10px;
+}
+
+.cart-info {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.3px solid #EFF1F4;
+  background-color: white;
+}
+
+.blue-icon {
+  color: $blue;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  margin: 8px;
+}
+
+.cart-info:nth-child(3) {
+  margin-bottom: 10px;
+}
+
+.cart-total {
+  width: 100%;
+  height: 60px;
+  color: $dark-gray;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.total {
+  margin-left: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: $dark-gray;
+}
+
+.sum {
+  margin: 8px;
+}
+
+.btn-dismiss {
+  background-color: $blue;
+  border: none;
+  box-shadow: none;
+}
+
+.btn-dismiss:hover {
+  border: none;
+  box-shadow: none;
+}
+

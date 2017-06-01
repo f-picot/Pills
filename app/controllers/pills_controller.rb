@@ -17,8 +17,8 @@ class PillsController < ApplicationController
       end
     end
     @pills = Pill.all
-    @address = params[:search]
     @cart = current_cart
+    @cart.delivery_time = Date.new
     @cart_item = CartItem.new
   end
 
@@ -28,7 +28,7 @@ class PillsController < ApplicationController
     if session[:cart_id]
       @current_cart ||= Cart.find(session[:cart_id])
     else
-      @current_cart = Cart.create!
+      @current_cart = Cart.create(delivery_location: params[:search])
       session[:cart_id] = @current_cart.id
     end
     @current_cart

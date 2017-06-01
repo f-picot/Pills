@@ -2,9 +2,9 @@
 
 <div class="order-banner">
   <div class="map-text">
-    <p><%= @address %></p>
+    <p><%= @cart.delivery_location %></p>
     <p>|</p>
-    <p><%= Time.now.strftime("%Y-%d-%m %H:%M:%S %Z") %></p>
+    <p><%= @cart.delivery_time %></p>
   </div>
 </div>
 
@@ -40,15 +40,15 @@
                 <% if @cart.cart_items.where(pill_id: pill.id).first %>
                   <%= simple_form_for [pill, @cart.cart_items.where(pill_id: pill.id).first], method: :patch do |f| %>
                     <%= f.hidden_field :cart_id, value: @cart.id %>
-                     <%= button_tag(type: 'submit', class: "divbutton") do %>
-                    <span>-</span>
+                    <%= button_tag(type: 'submit', class: "divbutton") do %>
+                      <span>-</span>
                     <% end %>
-                    <% end %>
+                  <% end %>
                 <% end %>
                 <%= simple_form_for [pill, @cart_item] do |f| %>
                   <%= f.hidden_field :cart_id, value: @cart.id %>
                   <%= button_tag(type: 'submit', class: "divbutton") do %>
-                 <span>+</span>
+                    <span>+</span>
                   <% end %>
                 <% end %>
               </div>
@@ -63,7 +63,7 @@
 <div class="cart-wrapper">
   <div class="cart-button btn btn-primary" data-toggle="modal" data-target="#mycart">
     <i class="fa fa-medkit normal-icon"></i>
-    <div class="items-count"><%= @cart.cart_items.count %></div>
+    <div class="items-count"><%= @cart.nb_items %></div>
   </div>
 </div>
 
@@ -71,29 +71,46 @@
   <% if @cart.cart_items.any? %>
     <div class="filled-cart">
       <div class="cart-recap">
-        <i class="fa fa-medkit normal-icon"></i>
-        <p>Mes pills</p>
-        <div class="items-count"><%= @cart.cart_items.count %></div>
+        <div class="cart-content-header">
+          <i class="fa fa-medkit normal-icon"></i>
+          <p>Vos pills</p>
+          <div class="items-count"><%= @cart.nb_items %></div>
+        </div>
+        <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="cart-info">
+        <div class="cart-content">
+          <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
+          <p>16 Villa Gaudelet, 75011 Paris</p>
+        </div>
+      </div>
+      <div class="cart-info">
+        <div class="cart-content">
+          <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
+          <p>14h30 - 15h30</p>
+        </div>
       </div>
       <div class="cart-products">
-
+        <% @cart.cart_items.each do |cart_item| %>
+          <div class="cart-product">
+            <%= cart_item.pill.name %>
+            <%= cart_item.pill.capacity %>
+            <p><%= cart_item.quantity %> x <%= cart_item.pill.price %>€</p>
+          </div>
+        <% end %>
       </div>
       <div class="cart-total">
-
+        <div class="total underlined">
+          <p>Total</p>
+        </div>
+        <div class="sum">
+          <p><%= @cart.total %>€</p>
+        </div>
       </div>
-      <div class="btn btn-primary">ETAPE SUIVANTE</div>
+      <div class="cart-validation">
+        <div class="btn btn-primary btn-mycart">Etape suivante</div>
+      </div>
     </div>
-    <h2>Vos Pills <%= @cart.cart_items.count %></h2>
-    <!-- afficher @cart.delivery_location -->
-    <!-- afficher @cart.delivery_time -->
-    <ul>
-      <% @cart.cart_items.each do |cart_item| %>
-        <li><%= cart_item.quantity %> -
-            <%= cart_item.pill.name %> :
-            <%= cart_item.pill.price * cart_item.quantity %> euros</li>
-      <% end %>
-    </ul>
-    <p>Total : <%= @cart.total %> euros</p>
   <% else %>
     <div class="empty-cart">
       <div class="badge-icon">
