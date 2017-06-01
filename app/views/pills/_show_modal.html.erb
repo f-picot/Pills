@@ -1,0 +1,50 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title text-center" id="myModalLabel"><%=pill.name %></h4>
+    </div>
+    <div class="modal-body">
+     <div class="card-picture">
+        <div class="frame-picture">
+            <%= image_tag pill.photo %>
+        </div>
+      </div>
+      <div class="card-lab">
+        <%= image_tag(pill.brandphoto, class: "avatar-bordered") %>
+        <p class="underlined"> <%= pill.brand %> </p>
+
+      </div>
+      <div class="card-description">
+        <h2> <%= pill.name %></h2>
+        <p> <%= pill.description  %> </p>
+      </div>
+      <div class="card-order">
+        <div class="lastblock">
+          <div class="capacity">
+              <p><%= pill.capacity %>
+          </div>
+          <div class="price">
+            <p><%= pill.price %> € </p>
+          </div>
+        </div>
+        <div class="cart-control">
+          <% if @cart.cart_items.where(pill_id: pill.id).first %>
+            <%= simple_form_for [pill, @cart.cart_items.where(pill_id: pill.id).first], method: :patch do |f| %>
+              <%= f.hidden_field :cart_id, value: @cart.id %>
+               <%= button_tag(type: 'submit', class: "divbutton") do %>
+              <span>-</span>
+              <% end %>
+              <% end %>
+          <% end %>
+          <%= simple_form_for [pill, @cart_item] do |f| %>
+            <%= f.hidden_field :cart_id, value: @cart.id %>
+            <%= button_tag(type: 'submit', class: "divbutton") do %>
+           <span>+</span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
