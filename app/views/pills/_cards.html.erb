@@ -1,5 +1,12 @@
+<div class="modal fade" id="<%= pill.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <%= render 'show_modal', pill: pill  %>
+</div>
+
+
 <div class="col-xs-12 col-sm-6 col-md-4" >
   <div class="card">
+    <div class="full-card" data-toggle="modal" data-target="#<%= pill.id %>">
+    </div>
     <div class="card-picture">
       <div class="frame-picture">
           <%= image_tag pill.photo %>
