@@ -4,8 +4,6 @@
 }
 
 body {
-  // overflow-x: hidden;
-  // background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
   background-color: #F9F9F9;
 }
 
@@ -32,7 +30,6 @@ body {
 
 .container {
   width: 100%;
-
 }
 
 /* Banner */
@@ -44,22 +41,24 @@ body {
 .banner {
   color: white;
   text-align: center;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://maps.googleapis.com/maps/api/staticmap?center=Paris&zoom=13&scale=1&size=640x300&maptype=roadmap&format=png&visual_refresh=true);
-  height: calc(60vh);
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url("staticmap.png");
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: -70px;
   // z-index: 2;
   // overflow: hidden;
+  @media (max-width: 375px) {
+    height: 100vh;
+  }
 }
 
-.banner h1 {
-  font-size: 60px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  color: $blue;
-}
+// .banner h1 {
+//   font-size: 60px;
+//   font-weight: bold;
+//   color: $blue;
+// }
 
 .banner p {
   font-size: 40px;
@@ -67,6 +66,20 @@ body {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
   color: $green;
+}
+
+.banner-content{
+  width: 100%;
+}
+
+/* Heading */
+
+.heading-home{
+  color: #eeeeee !important;
+  font-size: 45px !important;
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 }
 
 /* Search Customization */
@@ -126,16 +139,49 @@ body {
   color: $green;
 }
 
-/* Containers */
-
-.green-section{
-  background-color: $green;
-  // border: 1px solid $blue;
-  padding: 15px 15px;
+.headline{
+  font-family: lato;
+  font-size: 45px;
+  padding: 3%;
 }
 
-.blue-section{
+/* Sections */
+
+.section-one{
+  background-color: white;
+  overflow: hidden;
+  width: 100%;
+  font-family: Roboto,Arial,sans-serif;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.about{
+  font-weight: bold;
+  color: $blue;
+}
+
+
+.section-two{
   background-color: $blue;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  overflow: hidden;
+  width: 100%;
+  color: white;
+}
+
+.section-three{
+  background-color: $green;
+  overflow: hidden;
+  width: 100%;
+  font-family: Roboto,Arial,sans-serif;
+}
+
+/* Icons */
+
+.payment{
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%
 }

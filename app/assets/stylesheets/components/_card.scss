@@ -70,6 +70,13 @@
   }
 }
 
+.flexbox {
+  justify-content: center;
+  align-items: center;
+    /* align-content: center; */
+  display: flex;
+}
+
 .font {
   line-height: 1px;
 }
@@ -104,6 +111,10 @@
   border-bottom: 0.3px solid #EFF1F4;
 }
 
+#card-description-show {
+  padding: 2px 23px 20px 23px;
+}
+
 .card-description h2 {
   font-size: 17px;
   font-weight: 600;
@@ -124,10 +135,14 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 10px 20px 10px 20px;
+  padding: 30px 20px 30px 20px;
   height: 160px;
   justify-content: space-between;
   width: 100%;
+}
+
+#card-order-show {
+  height: 0px;
 }
 
 .lastblock {
@@ -147,4 +162,13 @@
 
 .wrapper {
   justify-content: center;
+}
+
+.full-card {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  bottom: 125px;
+  right: 14px;
+  left: 14px;
 }
