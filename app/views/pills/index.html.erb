@@ -12,33 +12,50 @@
   <div class="customcontainer">
     <div class="row">
       <% @pills.each do |pill| %>
-      <div class="col-xs-12 col-sm-6 col-md-4" >
-        <div class="card">
-          <div class="card-picture">
-            <div class="frame-picture">
-                <%= image_tag pill.photo %>
+        <div class="col-xs-12 col-sm-6 col-md-4" >
+          <div class="card">
+            <div class="card-picture">
+              <div class="frame-picture">
+                  <%= image_tag pill.photo %>
+              </div>
             </div>
-          </div>
-          <div class="card-lab">
-            <%= image_tag(pill.brandphoto, class: "avatar-bordered") %>
-            <p class="underlined"> <%= pill.brand %> </p>
-          </div>
-          <div class="card-description">
-            <h2> <%= pill.name %></h2>
-            <p> <%= pill.description  %> </p>
-          </div>
-          <div class="card-order">
-            <div class="capacity">
-              <p><%= pill.capacity %>
-              <!-- ajouter le bouton panier -->
+            <div class="card-lab">
+              <%= image_tag(pill.brandphoto, class: "avatar-bordered") %>
+              <p class="underlined"> <%= pill.brand %> </p>
             </div>
-            <div class="price">
-              <p><%= pill.price %> € </p>
+            <div class="card-description">
+              <h2> <%= pill.name %></h2>
+              <p> <%= pill.description  %> </p>
+            </div>
+            <div class="card-order">
+              <div class="lastblock">
+                <div class="capacity">
+                    <p><%= pill.capacity %>
+                </div>
+                <div class="price">
+                  <p><%= pill.price %> € </p>
+                </div>
+              </div>
+              <div class="cart-control">
+                <% if @cart.cart_items.where(pill_id: pill.id).first %>
+                  <%= simple_form_for [pill, @cart.cart_items.where(pill_id: pill.id).first], method: :patch do |f| %>
+                    <%= f.hidden_field :cart_id, value: @cart.id %>
+                     <%= button_tag(type: 'submit', class: "divbutton") do %>
+                    <span>-</span>
+                    <% end %>
+                    <% end %>
+                <% end %>
+                <%= simple_form_for [pill, @cart_item] do |f| %>
+                  <%= f.hidden_field :cart_id, value: @cart.id %>
+                  <%= button_tag(type: 'submit', class: "divbutton") do %>
+                 <span>+</span>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -87,7 +104,6 @@
     </div>
   <% end %>
 </div>
-
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
