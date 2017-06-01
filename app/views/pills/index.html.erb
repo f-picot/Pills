@@ -1,57 +1,155 @@
 <div class="map" id="map" style="width: 100%; height: 200px;"></div>
+
 <div class="order-banner">
   <div class="map-text">
-    <p><%= @address %></p>
+    <p><%= @cart.delivery_location %></p>
     <p>|</p>
-    <p>14:00</p>
+    <p><%= @cart.delivery_time %></p>
   </div>
-</div>
-
-<div>
-    <%= simple_form_for(:pill, url: pills_path, method: :get, remote: true) do |k| %>
-    <div id="search-bar-form" class="flexbox">
-      <%= k.input :name, label: false, placeholder: "Search a medoc", class: "navbar-wagon-search-input", id: "search_name" %>
-      <%= k.button :submit, class: "btn btn-primary ", id: "home_button", value:"" %>
-        <i class="glyphicon glyphicon-search"></i>
-    </div>
-  <% end %>
-</div>
-
-<div id="categories-container">
-  <% @categories.each do |category| %>
-    <div class="category-button" data-category="<%= category %>"><%= category %></div>
-  <% end %>
 </div>
 
 <div class="wrapper">
   <div class="customcontainer">
     <div class="row">
-      <div id="pill-card">
-        <%= render partial: 'cards', collection: @pills, as: :pill %>
-      </div>
+      <% @pills.each do |pill| %>
+        <div class="col-xs-12 col-sm-6 col-md-4" >
+          <div class="card">
+            <div class="card-picture">
+              <div class="frame-picture">
+                  <%= image_tag pill.photo %>
+              </div>
+            </div>
+            <div class="card-lab">
+              <%= image_tag(pill.brandphoto, class: "avatar-bordered") %>
+              <p class="underlined"> <%= pill.brand %> </p>
+            </div>
+            <div class="card-description">
+              <h2> <%= pill.name %></h2>
+              <p> <%= pill.description  %> </p>
+            </div>
+            <div class="card-order">
+              <div class="lastblock">
+                <div class="capacity">
+                    <p><%= pill.capacity %>
+                </div>
+                <div class="price">
+                  <p><%= pill.price %> € </p>
+                </div>
+              </div>
+              <div class="cart-control">
+                <% if @cart.cart_items.where(pill_id: pill.id).first %>
+                  <%= simple_form_for [pill, @cart.cart_items.where(pill_id: pill.id).first], method: :patch do |f| %>
+                    <%= f.hidden_field :cart_id, value: @cart.id %>
+                    <%= button_tag(type: 'submit', class: "divbutton") do %>
+                      <span>-</span>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <%= simple_form_for [pill, @cart_item] do |f| %>
+                  <%= f.hidden_field :cart_id, value: @cart.id %>
+                  <%= button_tag(type: 'submit', class: "divbutton") do %>
+                    <span>+</span>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-<% if @cart.cart_items.any? %>
-  <h2>Vos Pills <%= @cart.cart_items.count %></h2>
-  <!-- afficher @cart.delivery_location -->
-  <!-- afficher @cart.delivery_time -->
-  <ul>
-    <% @cart.cart_items.each do |cart_item| %>
-      <li><%= cart_item.quantity %> -
-          <%= cart_item.pill.name %> :
-          <%= cart_item.pill.price * cart_item.quantity %> euros</li>
-    <% end %>
-  </ul>
-  <p>Total : <%= @cart.total %> euros</p>
-<% else %>
-  <h2>Votre panier est vide</h2>
-  <p>Ajoutez des produits à votre commande</p>
+<div class="cart-wrapper">
+  <div class="cart-button btn btn-primary" data-toggle="modal" data-target="#mycart">
+    <i class="fa fa-medkit normal-icon"></i>
+    <div class="items-count"><%= @cart.nb_items %></div>
+  </div>
+</div>
+
+<div class="modal fade" id="mycart">
+  <% if @cart.cart_items.any? %>
+    <div class="filled-cart">
+      <div class="cart-recap">
+        <div class="cart-content-header">
+          <i class="fa fa-medkit normal-icon"></i>
+          <p>Vos pills</p>
+          <div class="items-count"><%= @cart.nb_items %></div>
+        </div>
+        <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="cart-info">
+        <div class="cart-content">
+          <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
+          <p>16 Villa Gaudelet, 75011 Paris</p>
+        </div>
+      </div>
+      <div class="cart-info">
+        <div class="cart-content">
+          <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
+          <p>14h30 - 15h30</p>
+        </div>
+      </div>
+      <div class="cart-products">
+        <% @cart.cart_items.each do |cart_item| %>
+          <div class="cart-product">
+            <%= cart_item.pill.name %>
+            <%= cart_item.pill.capacity %>
+            <p><%= cart_item.quantity %> x <%= cart_item.pill.price %>€</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="cart-total">
+        <div class="total underlined">
+          <p>Total</p>
+        </div>
+        <div class="sum">
+          <p><%= @cart.total %>€</p>
+        </div>
+      </div>
+      <div class="cart-validation">
+        <div class="btn btn-primary btn-mycart">Etape suivante</div>
+      </div>
+    </div>
+  <% else %>
+    <div class="empty-cart">
+      <div class="badge-icon">
+        <i class="fa fa-medkit large-icon"></i>
+      </div>
+      <h2>Votre panier est vide</h2>
+      <p>Ajoutez des produits à votre commande</p>
+    </div>
+  <% end %>
+</div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      $('.cart-button').on('click', function(event) {
+        $('.mycart').removeClass('hidden');
+      });
+    });
+  <% end %>
 <% end %>
 
 <h1>Add pills to cart</h1>
-
+<ul>
+  <% @pills.each do |pill| %>
+    <li><%= pill.name %></li>
+    <div class="cart-control">
+      <% if @cart.cart_items.where(pill_id: pill.id).first %>
+        <%= simple_form_for [pill, @cart.cart_items.where(pill_id: pill.id).first], method: :patch do |f| %>
+          <%= f.hidden_field :cart_id, value: @cart.id %>
+          <%= f.submit "-", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+      <%= simple_form_for [pill, @cart_item] do |f| %>
+        <%= f.hidden_field :cart_id, value: @cart.id %>
+        <%= f.submit "+", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+</ul>
 
 <% content_for(:after_js) do %>
   <script>
@@ -247,7 +345,8 @@
       var handler = Gmaps.build('Google');
       handler.buildMap( {
         provider: {
-          styles: styles
+          styles: styles,
+          scrollwheel: false, zoomControl: false
         }, internal: { id: 'map' } }, function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);

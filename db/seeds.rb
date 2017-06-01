@@ -5,7 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts "Destroy all cart items..."
+CartItem.destroy_all
+puts "All cart items destroyed!"
+puts "Destroy all pills..."
+Pill.destroy_all
+puts "All pills destroyed!"
 doliprane = Pill.create!(
   name: "Doliprane Douleurs & fièvres",
   brand: "Sanofi Aventis",
@@ -65,6 +70,6 @@ strepsils = Pill.create!(
   brandphoto: "reckitt.png",
   capacity: "24 PASTILLES"
   )
-
+puts "Pills seeded"
 
 
