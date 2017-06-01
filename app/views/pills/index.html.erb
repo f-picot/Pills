@@ -7,6 +7,16 @@
   </div>
 </div>
 
+<div>
+    <%= simple_form_for(:pill, url: pills_path, method: :get, remote: true) do |k| %>
+    <div id="search-bar-form" class="flexbox">
+      <%= k.input :name, label: false, placeholder: "Search a medoc", class: "navbar-wagon-search-input", id: "search_name" %>
+      <%= k.button :submit, class: "btn btn-primary ", id: "home_button", value:"" %>
+        <i class="glyphicon glyphicon-search"></i>
+    </div>
+  <% end %>
+</div>
+
 <div class="wrapper">
   <div class="customcontainer">
     <div class="row">
