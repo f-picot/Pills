@@ -1,8 +1,8 @@
 <%= form_tag(pills_path, method: "get") do %>
   <div class="flexbox">
-    <%= text_field_tag :search, params[:search], placeholder: "Pick an address...", class: "navbar-wagon-search-input", id: "search_place" %>
-    <%= button_tag(type: "submit", class: "btn btn-primary", id: "home_button") do %>
-      <i class="glyphicon glyphicon-search"></i>
+    <%= text_field_tag :search, params[:search], placeholder: "Pick an address...", class: "search", id: "search_place" %>
+    <%= button_tag(type: "submit", class: "submit", id: "home_button") do %>
+      <i class="glyphicon glyphicon-map-marker glyph-size"></i>
     <% end %>
   </div>
 <% end %>

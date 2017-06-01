@@ -1,0 +1,47 @@
+input {
+  box-sizing: border-box;
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.flexbox {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  // height: 80px;
+}
+
+.search {
+  padding: 0 30px;
+  font-size: 18px;
+  width: 100%;
+  // max-width: 400px;
+  height: 60px;
+  border: 1px solid darken(white, 30%);
+  border-radius: 5px;
+  color: grey;
+}
+
+.submit {
+  cursor: pointer;
+  border: none;
+  background: no-repeat center center, $blue;
+  background-size: 35px 35px;
+  border-radius: 50%;
+  // padding: 15px 25px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 5px -60px;
+
+}
+
+.submit:hover{
+  background-color: #11a9d7;
+}
+
+.glyph-size{
+  font-size: 20px;
+}
