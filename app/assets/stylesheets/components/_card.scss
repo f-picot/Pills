@@ -70,6 +70,13 @@
   }
 }
 
+.flexbox {
+  justify-content: center;
+  align-items: center;
+    /* align-content: center; */
+  display: flex;
+}
+
 .font {
   line-height: 1px;
 }
