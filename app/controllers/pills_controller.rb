@@ -1,5 +1,6 @@
 class PillsController < ApplicationController
   def index
+    # binding.pry
     if params[:search]
 
       location = Geocoder.search(params[:search])
@@ -9,7 +10,7 @@ class PillsController < ApplicationController
         marker.lat location[0].latitude
         marker.lng location[0].longitude
         marker.picture ({
-                        "url" => ApplicationController.helpers.asset_path("pinpon.png"),
+                        "url" => ApplicationController.helpers.asset_path("marker.png"),
                         "width" => 50,
                         "height" => 50,
         })
@@ -20,6 +21,16 @@ class PillsController < ApplicationController
     @address = params[:search]
     @cart = current_cart
     @cart_item = CartItem.new
+    if params[:pill]
+      if params[:pill][:name] != ""
+        @pills = Pill.where("name ILIKE ?", "%#{params[:pill][:name]}%")
+        respond_to do |format|
+          format.html { redirect_to pills_path }
+          format.js
+        end
+      end
+    end
+
   end
 
   private
