@@ -1,5 +1,6 @@
 class PillsController < ApplicationController
   def index
+    # binding.pry
     if params[:search]
 
       location = Geocoder.search(params[:search])
@@ -20,6 +21,16 @@ class PillsController < ApplicationController
     @address = params[:search]
     @cart = current_cart
     @cart_item = CartItem.new
+    if params[:pill]
+      if params[:pill][:name] != ""
+        @pills = Pill.where("name ILIKE ?", "%#{params[:pill][:name]}%")
+        respond_to do |format|
+          format.html { redirect_to pills_path }
+          format.js
+        end
+      end
+    end
+
   end
 
   private
