@@ -14,7 +14,7 @@
 }
 
 .cart-button {
-  margin: 30px;
+  margin: 15px 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,4 +264,10 @@
   color: $dark-gray;
   margin-right: 8px;
   font-weight: bold;
+}
+
+.cart-btn-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
