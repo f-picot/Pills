@@ -35,7 +35,7 @@ body {
 /* Banner */
 
 .banner-content {
-  margin-top: 50px;
+  margin-top: -100px;
 }
 
 .banner {
@@ -44,7 +44,7 @@ body {
   // background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url("staticmap.png");
   background: linear-gradient(142deg, #119dd7, #9feed1);
   // background-size: 400% 400%;
-  height: 50vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +148,7 @@ body {
 .headline{
   font-family: lato;
   font-size: 35px;
-  padding-top: 3%;
+  padding-top: 4%;
   padding-bottom: 5%;
   // color: #11a9d7;
 }
@@ -160,7 +160,7 @@ body {
   overflow: hidden;
   width: 100%;
   font-family: lato;
-  height: 60vh;
+  height: 80vh;
   align-items: center;
   justify-content: center;
   color: $blue;
@@ -174,7 +174,7 @@ body {
 .about-two{
   font-family: lato;
   font-size: 35px;
-  padding-top: 5%;
+  padding-top: 6%;
   padding-bottom: 10%;
   color: white;
 }
@@ -195,7 +195,7 @@ body {
   color: white;
   overflow: hidden;
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   align-items: center;
   justify-content: center;
   font-family: lato;
@@ -293,4 +293,32 @@ body {
   100%{
     opacity: 0;
   }
+}
+
+/* Parallel effect */
+#backshape .row {
+  display:block;
+  // float:left;
+  margin:50px auto 200px;
+  width:100%;
+  padding:0 5%;
+  transform:skew(0deg,-5deg);
+  -ms-transform:skew(0deg,-10deg);
+  -webkit-transform:skew(0deg,-5deg);
+}
+
+#backshape {
+  z-index:1;
+  display:block;
+  // float:left;
+  margin-top:-100px;
+  width:100%;
+  background:white;
+  transform:skew(0deg,10deg);
+-ms-transform:skew(0deg,10deg); /* IE 9 */
+-webkit-transform:skew(0deg,5deg); /* Safari and Chrome */
+}
+
+.pages-home {
+  background-color: $green;
 }
