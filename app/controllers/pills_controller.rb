@@ -1,7 +1,7 @@
 class PillsController < ApplicationController
   def index
     # binding.pry
-    if params[:search]
+    if params[:search].include?"Paris"
 
       location = Geocoder.search(params[:search])
       @locations = [location]
@@ -16,6 +16,8 @@ class PillsController < ApplicationController
         })
         # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
       end
+    else
+
     end
     @pills = Pill.all
     @cart = current_cart
