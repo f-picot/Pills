@@ -47,72 +47,79 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="mycart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div >
-    <div >
-
-        <% if @cart.cart_items.any? %>
-          <div class="filled-cart">
-            <div class="cart-recap">
-              <div class="cart-content-header">
-                <i class="fa fa-medkit normal-icon"></i>
-                <p>Vos pills</p>
-                <div class="items-count"><%= @cart.nb_items %></div>
-              </div>
-              <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
-            </div>
-            <div class="cart-info">
-              <div class="cart-content">
-                <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
-                <p>16 Villa Gaudelet, 75011 Paris</p>
-              </div>
-            </div>
-            <div class="cart-info">
-              <div class="cart-content">
-                <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
-                <p>14h30 - 15h30</p>
-              </div>
-            </div>
-            <div class="cart-products">
-              <% @cart.cart_items.each do |cart_item| %>
-                <div class="cart-product">
-                  <%= cart_item.pill.name %>
-                  <%= cart_item.pill.capacity %>
-                  <p><%= cart_item.quantity %> x <%= cart_item.pill.price %>€</p>
-                </div>
-              <% end %>
-            </div>
-            <div class="cart-total">
-              <div class="total underlined">
-                <p>Total</p>
-              </div>
-              <div class="sum">
-                <p><%= @cart.total %>€</p>
-              </div>
-            </div>
-            <div class="cart-validation">
-              <div class="btn btn-primary btn-mycart">Etape suivante</div>
-            </div>
+<div class="modal fade" id="mycart">
+  <% if @cart.cart_items.any? %>
+    <div class="filled-cart">
+      <div class="cart-recap">
+        <div class="cart-content-header">
+          <i class="fa fa-medkit normal-icon"></i>
+          <p>Vos pills</p>
+          <div class="items-count"><%= @cart.nb_items %></div>
+        </div>
+        <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="cart-info">
+        <div class="cart-content">
+          <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
+          <p>16 Villa Gaudelet, 75011 Paris</p>
+        </div>
+      </div>
+      <div class="cart-info">
+        <div class="cart-content">
+          <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
+          <p>14h30 - 15h30</p>
+        </div>
+      </div>
+      <div class="cart-info">
+        <div class="cart-content">
+          <div class="blue-icon"><i class="fa fa-ambulance"></i></div>
+          <p>Frais de livraison</p>
+        </div>
+          <div class="delivery-fees">
+            <p>2,90€</p>
           </div>
-        <% else %>
-          <div class="empty-cart">
-            <div>
-              <div class="badge-icon">
-                <i class="fa fa-medkit large-icon"></i>
-              </div>
-              <h2>Votre panier est vide</h2>
-              <p>Ajoutez des produits à votre commande</p>
+      </div>
+      <div class="cart-products">
+        <% @cart.cart_items.each do |cart_item| %>
+          <div class="cart-product">
+            <div class="item-picture">
+              <%= image_tag cart_item.pill.photo %>
+            </div>
+            <div class="item-description">
+              <p><%= cart_item.pill.name %></p>
+              <p><%= cart_item.pill.capacity %></p>
+            </div>
+            <div class="item-total">
+              <p><%= cart_item.quantity %> x <b><%= cart_item.pill.price %>€</b></p>
             </div>
           </div>
         <% end %>
       </div>
-
-
+      <div class="cart-total">
+        <div class="total underlined">
+          <p>Total</p>
+        </div>
+        <div class="sum">
+          <p><%= @cart.total %>€</p>
+        </div>
+      </div>
+      <div class="cart-validation">
+        <div class="btn btn-primary btn-mycart">Etape suivante</div>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="empty-cart">
+      <button type="button" data-dismiss="modal" class="btn-dismiss-empty"><i class="fa fa-times blue-times"></i></button>
+      <div class="badge-icon">
+        <i class="fa fa-medkit large-icon"></i>
+      </div>
+      <div class="text-center">
+        <h2>Votre panier est vide</h2>
+        <p>Ajoutez des produits à votre commande</p>
+      </div>
+    </div>
+  <% end %>
 </div>
-
 
 <% content_for(:after_js) do %>
   <script>

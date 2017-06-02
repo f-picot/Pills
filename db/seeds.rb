@@ -12,8 +12,8 @@ puts "Destroy all pills..."
 Pill.destroy_all
 puts "All pills destroyed!"
 doliprane = Pill.create!(
-  name: "Doliprane Douleurs & fièvres",
-  brand: "Sanofi Aventis",
+  name: "Doliprane",
+  brand: "Sanofi",
   description: "Paracetamol, médicament pour les maux de tête",
   price: 2.10,
   category: "Fièvres",
@@ -24,7 +24,7 @@ doliprane = Pill.create!(
   )
 
 spasfon = Pill.create!(
-  name: "Spasfon Douleurs spasmodiques",
+  name: "Spasfon",
   brand: "Teva",
   description: "Produit de référence indiqué contre les spasmes intestinaux",
   price: 2.99,
@@ -37,7 +37,7 @@ spasfon = Pill.create!(
 
 aspegic = Pill.create!(
   name: "Aspegic",
-  brand: "Sanofi Aventis",
+  brand: "Sanofi",
   description: "Médicament pour les maux de tête",
   price: 5.50,
   category: "Fièvres",
