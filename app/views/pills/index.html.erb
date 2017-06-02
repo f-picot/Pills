@@ -70,15 +70,6 @@
           <p>14h30 - 15h30</p>
         </div>
       </div>
-      <div class="cart-info">
-        <div class="cart-content">
-          <div class="blue-icon"><i class="fa fa-ambulance"></i></div>
-          <p>Frais de livraison</p>
-        </div>
-          <div class="delivery-fees">
-            <p>2,90€</p>
-          </div>
-      </div>
       <div class="cart-products">
         <% @cart.cart_items.each do |cart_item| %>
           <div class="cart-product">
@@ -94,6 +85,15 @@
             </div>
           </div>
         <% end %>
+      </div>
+      <div class="cart-info">
+        <div class="cart-content">
+          <div class="blue-icon"><i class="fa fa-ambulance"></i></div>
+          <p>Frais de livraison</p>
+        </div>
+        <div class="delivery-fees">
+          <p>2,90€</p>
+        </div>
       </div>
       <div class="cart-total">
         <div class="total underlined">
