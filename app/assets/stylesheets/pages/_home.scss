@@ -72,11 +72,15 @@ body {
   width: 100%;
 }
 
+.banner-content h1{
+  font-family: Lato;
+}
+
 /* Heading */
 
 .heading-home{
-  color: #eeeeee !important;
-  font-size: 45px !important;
+  // color: #eeeeee !important;
+  // font-size: 45px !important;
   @media (max-width: 375px) {
     font-size: 12px;
   }
@@ -141,8 +145,10 @@ body {
 
 .headline{
   font-family: lato;
-  font-size: 45px;
-  padding: 3%;
+  font-size: 35px;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  // color: #11a9d7;
 }
 
 /* Sections */
@@ -151,15 +157,32 @@ body {
   background-color: white;
   overflow: hidden;
   width: 100%;
-  font-family: Roboto,Arial,sans-serif;
+  font-family: lato;
   height: 60vh;
   align-items: center;
   justify-content: center;
+  color: $blue;
 }
 
 .about{
   font-weight: bold;
   color: $blue;
+}
+
+.about-two{
+  font-family: lato;
+  font-size: 35px;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  color: white;
+}
+
+.about-three{
+  font-family: lato;
+  font-size: 35px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: white;
 }
 
 
@@ -168,13 +191,49 @@ body {
   overflow: hidden;
   width: 100%;
   color: white;
+  overflow: hidden;
+  width: 100%;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  font-family: lato;
 }
 
 .section-three{
   background-color: $green;
   overflow: hidden;
   width: 100%;
-  font-family: Roboto,Arial,sans-serif;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  font-family: lato;
+}
+
+.landicons{
+  display: inline-block;
+  font-weight: bold;
+  color: $blue;
+  font-size: 30px;
+  padding: 15%;
+  font-family: lato;
+}
+
+.p-two{
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  font-size: 30px;
+  // padding: 15%;
+  font-family: lato;
+}
+
+.p-three{
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  font-size: 30px;
+  // padding: 15%;
+  font-family: lato;
 }
 
 /* Icons */
