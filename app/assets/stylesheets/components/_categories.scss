@@ -1,0 +1,22 @@
+#categories-container {
+  display:flex;
+  justify-content: center;
+  margin-top: 15px;
+  color: $dark-gray;
+}
+.category-button {
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid #e2e2e2;
+  margin: 0px 10px;
+}
+.designbar {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#pill_name {
+  color: $dark-gray;
+}
