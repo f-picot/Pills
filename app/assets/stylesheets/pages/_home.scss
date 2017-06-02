@@ -41,7 +41,9 @@ body {
 .banner {
   color: white;
   text-align: center;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url("staticmap.png");
+  // background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url("staticmap.png");
+  background: linear-gradient(142deg, #119dd7, #9feed1);
+  // background-size: 400% 400%;
   height: 50vh;
   display: flex;
   align-items: center;
@@ -243,4 +245,52 @@ body {
   align-items: center;
   justify-content: center;
   width: 40%
+}
+
+.certified{
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27%
+}
+
+.chat{
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28%
+}
+
+.delivery{
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%
+}
+
+/* Typing Text */
+.text-js{
+  opacity: 0;
+}
+
+.cursor{
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  /* Change colour of Cursor Here */
+  background-color: white;
+  z-index: 100;
+  animation: flash 0.5s none infinite alternate;
+}
+
+@keyframes flash{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
