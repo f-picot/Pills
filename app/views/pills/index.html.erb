@@ -31,19 +31,20 @@
 </div>
 
 <div class="wrapper">
+  <div class="cart-btn-modal">
+    <div class="cart-wrapper">
+      <div class="cart-button btn btn-primary" data-toggle="modal" data-target="#mycart">
+        <i class="fa fa-medkit normal-icon"></i>
+        <div class="items-count"><%= @cart.nb_items %></div>
+      </div>
+    </div>
+  </div>
   <div class="customcontainer">
     <div class="row">
       <div id="pill-card">
         <%= render partial: 'cards', collection: @pills, as: :pill %>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="cart-wrapper">
-  <div class="cart-button btn btn-primary" data-toggle="modal" data-target="#mycart">
-    <i class="fa fa-medkit normal-icon"></i>
-    <div class="items-count"><%= @cart.nb_items %></div>
   </div>
 </div>
 

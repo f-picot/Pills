@@ -14,9 +14,6 @@
   border-bottom: 7px solid #CEF9FC;
 }
 
-.brand img {
-}
-
 .capacity p {
   font-size: 9px;
   font-weight: 500;
@@ -33,6 +30,7 @@
   align-items: center;
   margin: 10px 0px 13px 0px;
   padding: 15px 23px 15px 23px;
+  flex: 1;
 }
 
 .card-picture {
@@ -102,6 +100,8 @@
   display: flex;
   justify-content: space-between;
   background-color: #F9F9F9;
+  position: relative;
+  margin-bottom: 30px;
 }
 
 .card-description {
@@ -143,6 +143,10 @@
 
 #card-order-show {
   height: 0px;
+}
+
+.modal-title h4 {
+  color: $dark-gray
 }
 
 .lastblock {
