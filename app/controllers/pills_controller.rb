@@ -1,12 +1,23 @@
 class PillsController < ApplicationController
   def index
     # binding.pry
-    if params[:search].include?"Paris"
-
+    @cart = current_cart
+    if params[:search]
       location = Geocoder.search(params[:search])
       @locations = [location]
-
-      @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+      @cart.delivery_location = params[:search]
+      @cart.save
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    else
+      if @cart.delivery_location
+        location = Geocoder.search(@cart.delivery_location)
+        @locations = [location]
+      else
+        location = Geocoder.search("Paris")
+        @locations = [location]
+      end
+    end
+    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
         marker.lat location[0].latitude
         marker.lng location[0].longitude
         marker.picture ({
@@ -14,14 +25,10 @@ class PillsController < ApplicationController
                         "width" => 50,
                         "height" => 50,
         })
-        # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-      end
-    else
-
     end
     @pills = Pill.all
-    @address = params[:search]
-    @cart = current_cart
+    @delivery_location = params[:search]
+    @cart.delivery_location = params[:search]
     # @cart.delivery_time = Date.new
     @cart_item = CartItem.new
     if params[:pill]
