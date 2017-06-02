@@ -20,7 +20,7 @@ class PillsController < ApplicationController
     @pills = Pill.all
     @address = params[:search]
     @cart = current_cart
-    @cart.delivery_time = Date.new
+    # @cart.delivery_time = Date.new
     @cart_item = CartItem.new
     if params[:pill]
       if params[:pill][:name] != ""
