@@ -70,6 +70,19 @@ strepsils = Pill.create!(
   brandphoto: "reckitt.png",
   capacity: "24 PASTILLES"
   )
+
+strepsils = Pill.create!(
+  name: "Strepsils",
+  brand: "Reckitt Benckiser",
+  description: "Médicament pour les maux de gorge",
+  price: 5.20,
+  category: "Douleurs",
+  stock: 80,
+  photo: "strepsils.png",
+  brandphoto: "reckitt.png",
+  capacity: "24 PASTILLES"
+  )
+
 puts "Pills seeded"
 
 

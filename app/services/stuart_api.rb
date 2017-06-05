@@ -25,13 +25,3 @@ class StuartApi
     @client.post(url, form: payload).parse
   end
 end
-
-# Example d'appel :
-StuartApi.new.create_job_quote({
-  origin: "8 Rue de Joinville, 75019",
-  destination: "16 Villa Gaudelet, 75011",
-  transportTypeIds: "2",
-  originCompanyContact: "MaPharmacie",
-  destinationContactFirstName: "Clement",
-  destinationContactLastName: "Peneranda"
-})
