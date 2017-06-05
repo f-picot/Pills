@@ -18,6 +18,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'geocoder'
+gem 'stuart', github: "JulienBreux/stuart"
+gem "http"
 
 group :development, :test do
   gem 'binding_of_caller'

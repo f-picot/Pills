@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts "Destroy all cart items..."
 CartItem.destroy_all
 puts "All cart items destroyed!"
@@ -14,9 +7,9 @@ puts "All pills destroyed!"
 doliprane = Pill.create!(
   name: "Doliprane",
   brand: "Sanofi",
-  description: "Paracetamol, médicament pour les maux de tête",
+  description: "Médicament pour soigner les maux de tête",
   price: 2.10,
-  category: "Fièvres",
+  category: "Douleurs",
   stock: 100,
   photo: "doliprane.png",
   brandphoto: "sanofi.png",
@@ -26,7 +19,7 @@ doliprane = Pill.create!(
 spasfon = Pill.create!(
   name: "Spasfon",
   brand: "Teva",
-  description: "Produit de référence indiqué contre les spasmes intestinaux",
+  description: "Médicament indiqué contre les spasmes intestinaux",
   price: 2.99,
   category: "Douleurs",
   stock: 50,
@@ -38,9 +31,9 @@ spasfon = Pill.create!(
 aspegic = Pill.create!(
   name: "Aspegic",
   brand: "Sanofi",
-  description: "Médicament pour les maux de tête",
+  description: "Médicament indiqués pour traiter les maux de tête",
   price: 5.50,
-  category: "Fièvres",
+  category: "Douleurs",
   stock: 70,
   photo: "aspegic.png",
   brandphoto: "sanofi.png",
@@ -50,9 +43,9 @@ aspegic = Pill.create!(
 smecta = Pill.create!(
   name: "Smecta",
   brand: "Ipsen",
-  description: "Médicament pour les maux de ventre",
+  description: "Médicament pour traiter la diarrhée",
   price: 4.35,
-  category: "Douleurs",
+  category: "Digestion",
   stock: 40,
   photo: "smecta.png",
   brandphoto: "ipsen.png",
@@ -83,6 +76,29 @@ strepsils = Pill.create!(
   capacity: "24 PASTILLES"
   )
 
+exomega = Pill.create!(
+  name: "Exomega",
+  brand: "Aderma",
+  description: "Permet de traiter les sécheresses de peau",
+  price: 10.90,
+  category: "Hydratant",
+  stock: 80,
+  photo: "exomega.png",
+  brandphoto: "aderma.png",
+  capacity: "100 mL"
+  )
+
+actirub = Pill.create!(
+  name: "Actirub",
+  brand: "Santé Verte",
+  description: "Permet de traiter le rhume",
+  price: 11.30,
+  category: "Bien-être",
+  stock: 80,
+  photo: "actirub.png",
+  brandphoto: "santeverte.png",
+  capacity: "15 sachets"
+  )
+
+
 puts "Pills seeded"
-
-

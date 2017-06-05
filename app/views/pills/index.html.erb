@@ -107,7 +107,12 @@
           <p>Frais de livraison</p>
         </div>
         <div class="delivery-fees">
-          <p>2,90€</p>
+          <p><%= @cart.delivery_price %> €</p>
+        </div>
+      </div>
+      <div class="cart-info">
+        <div class="delivery-fees">
+          <p>Vous serez livrés dans <%= @duration %> min</p>
         </div>
       </div>
       <div class="cart-total">
