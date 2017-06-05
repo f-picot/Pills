@@ -83,6 +83,20 @@
             </div>
             <div class="item-total">
               <p><%= cart_item.quantity %> x <b><%= cart_item.pill.price %>€</b></p>
+              <div class="cart-control">
+                <%= simple_form_for [cart_item.pill, cart_item], method: :patch do |f| %>
+                  <%= f.hidden_field :cart_id, value: @cart.id %>
+                  <%= button_tag(type: 'submit', class: "divbutton-small") do %>
+                    <span>-</span>
+                  <% end %>
+                <% end %>
+                <%= simple_form_for [cart_item.pill, cart_item], method: :post, url: pill_cart_items_path(cart_item.pill) do |f| %>
+                  <%= f.hidden_field :cart_id, value: @cart.id %>
+                  <%= button_tag(type: 'submit', class: "divbutton-small") do %>
+                    <span>+</span>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
@@ -105,7 +119,7 @@
         </div>
       </div>
       <div class="cart-validation">
-        <div class="btn btn-primary btn-mycart">Etape suivante</div>
+        <div class="btn btn-primary btn-mycart" data-toggle="modal" data-target="#signup">Etape suivante</div>
       </div>
     </div>
   <% else %>
@@ -120,6 +134,10 @@
       </div>
     </div>
   <% end %>
+</div>
+
+<div class="modal fade" id="signup">
+  <%= render "devise/registrations/form" %>
 </div>
 
 <% content_for(:after_js) do %>
