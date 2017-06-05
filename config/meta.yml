@@ -1,0 +1,5 @@
+meta_product_name: "Pills"
+meta_title: "Pills - Livraison de santé en 30 minutes"
+meta_description: "Pills - Faites vous livrer vos médicaments chez vous, en moins de 30 minutes"
+meta_image: "imagecardz.png"                           # Une image dans votre dossier app/assets/images/
+twitter_account: "@getpills"              # indispensable pour les Twitter Cards
