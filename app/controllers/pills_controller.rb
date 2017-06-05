@@ -28,8 +28,9 @@ class PillsController < ApplicationController
     end
     @pills = Pill.all
     # @cart.delivery_time = Date.new
-    @cart.delivery_time = 30.minutes.from_now
+    @cart.delivery_time = Time.now
     @cart_item = CartItem.new
+    @user = User.new
     if params[:pill]
       if params[:pill][:name] != ""
         @pills = Pill.where("name ILIKE ? OR category ILIKE ?", params[:pill][:name], params[:pill][:name])
@@ -59,6 +60,7 @@ class PillsController < ApplicationController
 # binding.pry
     @cart.update(delivery_price: @stuartquote["2"]["finalAmount"])
     @duration =  @stuartquote["2"]["duration"]
+
   end
 
   private
