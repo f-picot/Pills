@@ -28,8 +28,9 @@ class PillsController < ApplicationController
     end
     @pills = Pill.all
     # @cart.delivery_time = Date.new
-    @cart.delivery_time = 30.minutes.from_now
+    @cart.delivery_time = Time.now
     @cart_item = CartItem.new
+    @user = User.new
     if params[:pill]
       if params[:pill][:name] != ""
         @pills = Pill.where("name ILIKE ? OR category ILIKE ?", params[:pill][:name], params[:pill][:name])
@@ -47,7 +48,6 @@ class PillsController < ApplicationController
       end
     @categories.uniq!
     end
-
   end
 
   private
