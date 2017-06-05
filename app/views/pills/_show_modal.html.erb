@@ -25,7 +25,7 @@
               <p><%= pill.capacity %>
           </div>
           <div class="price">
-            <p><%= pill.price %> € </p>
+            <p>Amount: <%= humanized_money_with_symbol(pill.price) %></p>
           </div>
         </div>
         <div class="cart-control">
