@@ -33,10 +33,8 @@ ActiveRecord::Schema.define(version: 20170605161240) do
     t.string   "delivery_location"
     t.float    "latitude"
     t.float    "longitude"
-
-    t.integer  "price_cents",       default: 0, null: false
     t.decimal  "delivery_price",    default: "0.0"
-
+    t.integer  "price_cents",       default: 0,     null: false
     t.index ["user_id"], name: "index_carts_on_user_id", using: :btree
   end
 
