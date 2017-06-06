@@ -19,6 +19,8 @@ gem 'autoprefixer-rails'
 gem 'geocoder'
 gem 'money-rails'
 gem 'stripe'
+gem 'stuart', github: "JulienBreux/stuart"
+gem "http"
 
 group :development, :test do
   gem 'binding_of_caller'

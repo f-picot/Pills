@@ -28,8 +28,9 @@ class PillsController < ApplicationController
     end
     @pills = Pill.all
     # @cart.delivery_time = Date.new
-    @cart.delivery_time = 30.minutes.from_now
+    @cart.delivery_time = Time.now
     @cart_item = CartItem.new
+    @user = User.new
     if params[:pill]
       if params[:pill][:name] != ""
         @pills = Pill.where("name ILIKE ? OR category ILIKE ?", params[:pill][:name], params[:pill][:name])
@@ -47,6 +48,18 @@ class PillsController < ApplicationController
       end
     @categories.uniq!
     end
+
+    @stuartquote = StuartApi.new.create_job_quote({
+        origin: "8 Rue de Joinville, 75019",
+        destination: "16 Villa Gaudelet, 75011",
+        transportTypeIds: "2",
+        originCompanyContact: "MaPharmacie",
+        destinationContactFirstName: "Clement",
+        destinationContactLastName: "Peneranda"
+      })
+# binding.pry
+    @cart.update(delivery_price: @stuartquote["2"]["finalAmount"])
+    @duration =  @stuartquote["2"]["duration"]
 
   end
 
