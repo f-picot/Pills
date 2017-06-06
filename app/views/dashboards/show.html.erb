@@ -1,0 +1,53 @@
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation"><a href="#paid" aria-controls="paid" role="tab" data-toggle="tab">Commandes passées</a></li>
+    <li role="presentation" class="active"><a href="#pending" aria-controls="pending" role="tab" data-toggle="tab">Commandes en cours)</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane" id="paid">
+      <div class="dashcard-description">
+        <% @current_cart_paid.each do |cart| %>
+        <% cart.cart_items.each do |cart_item| %>
+        <div class="cart-product">
+          <div class="item-picture">
+            <%= image_tag cart_item.pill.photo %>
+          </div>
+          <div class="item-description">
+            <p><%= cart_item.pill.name %></p>
+            <p><%= cart_item.pill.capacity %></p>
+          </div>
+          <div class="item-total">
+            <p><%= cart_item.quantity %> x <b><%= cart_item.pill.price %>€</b></p>
+           </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane active" id="pending">
+      <div class="dashcard-description">
+        <% @current_cart_pending.each do |cart| %>
+        <% cart.cart_items.each do |cart_item| %>
+        <div class="cart-product">
+          <div class="item-picture">
+            <%= image_tag cart_item.pill.photo %>
+          </div>
+          <div class="item-description">
+            <p><%= cart_item.pill.name %></p>
+            <p><%= cart_item.pill.capacity %></p>
+          </div>
+          <div class="item-total">
+            <p><%= cart_item.quantity %> x <b><%= cart_item.pill.price %>€</b></p>
+           </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>

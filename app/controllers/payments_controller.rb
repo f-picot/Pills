@@ -19,6 +19,7 @@ class PaymentsController < ApplicationController
     )
 
     @order.update(payment: charge.to_json, state: 'paid')
+    @current_cart.update(status: 'paid')
     redirect_to order_path(@order)
 
   rescue Stripe::CardError => e
@@ -33,5 +34,4 @@ private
     @current_cart.user = current_user
   end
 end
-
 
