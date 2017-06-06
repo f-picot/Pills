@@ -8,14 +8,17 @@
   </div>
 </div>
 
-<div>
-  <%= simple_form_for(:pill, url: pills_path, method: :get, remote: true) do |k| %>
-    <div id="search-bar-form" class="flexbox">
-      <%= k.input :name, label: false, placeholder: "Search a medoc", class: "navbar-wagon-search-input", id: "search_name" %>
-      <%= k.button :submit, class: "btn btn-primary ", id: "home_button", value:"" %>
-        <i class="glyphicon glyphicon-search"></i>
-    </div>
-  <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag(pills_path, method: "get", remote: true) do %>
+      <div id="search-bar-form" class="flexbox-demo">
+        <%= text_field_tag "pill[name]", "", placeholder: "Search a medoc", class: "search", id: "pill_name" %>
+        <%= button_tag type: 'submit', class: "submit", id: "home_button"  do %>
+            <i class="glyphicon fa fa-search glyph-size"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div id="categories-container">
