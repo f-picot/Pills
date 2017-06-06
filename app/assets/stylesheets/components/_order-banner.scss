@@ -1,27 +1,74 @@
 .order-banner {
   position: absolute;
-  top: 210px;
+  top: 170px;
   width: 100%;
   text-align: center;
+  p {
+    margin: 0;
+  }
+}
+
+.pickers {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .map {
   position: relative;
 }
 
+.change-timeslot {
+  position: absolute;
+  top: 100px;
+}
+
 .map-text {
-  display: inline;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   padding: 10px 20px;
   background-color: $blue;
   border-radius: 20em;
-  opacity: 0.8;
+  opacity: 0.9;
   font-size: 16px;
   font-weight: lighter;
   color: white;
 }
 
 .map-text p {
-  display: inline;
   padding: 0 7px;
 }
 
+.timeslot p:last-child {
+  font-size: 10px;
+}
+
+.place-picker p:last-child {
+  font-size: 10px;
+}
+
+.timeslot {
+  border-left: 1px solid white;
+  width: 220px;
+  padding-left: 15px;
+}
+
+.place-picker {
+  width: 220px;
+  padding-right: 15px;
+}
+
+.btn:hover {
+  color: #0d9ea8;
+}
+
+.form-control {
+  color: $dark-gray;
+  border-radius: 4px;
+}
+
+.input-group-addon {
+  color: $blue;
+  border-radius: 4px;
+}
