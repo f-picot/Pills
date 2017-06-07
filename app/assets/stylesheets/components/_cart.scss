@@ -129,6 +129,20 @@
   background-color: $light-gray;
 }
 
+.cart-infos {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.3px solid #EFF1F4;
+  background-color: white;
+}
+
+.cart-infos:hover {
+    background-color: white;
+}
+
 .cart-product:hover {
   background-color: $light-gray;
 }
