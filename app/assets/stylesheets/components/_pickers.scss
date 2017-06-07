@@ -8,11 +8,12 @@
   color: $blue;
   p {
     padding: 0 7px;
-    margin: 0;
+    margin-bottom: 5%;
   }
 }
 
 .delivery-infos {
+  display: flex;
   border-bottom: 0.3px solid #EFF1F4;
   color: $blue;
   height: auto;
@@ -56,5 +57,22 @@
 
 .change-delivery-time {
   border-bottom: 0.3px solid #EFF1F4;
-  margin-bottom: 20px;
+  margin-bottom: 20%;
+}
+
+.deasy{
+  margin-top: 5% !important;
+}
+
+.flexbox-demo-modal{
+  text-align: center;
+  position: relative;
+  width: 100%;
+  // padding-top: 50px;
+  -webkit-box-pack: inherit;
+  -ms-flex-pack: inherit;
+  justify-content: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
