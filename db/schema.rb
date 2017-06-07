@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170606163745) do
     t.integer  "user_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.date     "delivery_time"
+    t.datetime "delivery_time"
     t.string   "delivery_location"
     t.float    "latitude"
     t.float    "longitude"

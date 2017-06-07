@@ -35,7 +35,7 @@
                <%= button_tag(type: 'submit', class: "divbutton") do %>
               <span>-</span>
               <% end %>
-              <% end %>
+            <% end %>
           <% end %>
           <%= simple_form_for [pill, @cart_item] do |f| %>
             <%= f.hidden_field :cart_id, value: @cart.id %>
