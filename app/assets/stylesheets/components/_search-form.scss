@@ -16,15 +16,15 @@ input {
 
 .search {
   padding: 0 30px;
-  font-size: 25px;
+  font-size: 19px;
   width: 100%;
   font-family: Muli;
   font-weight: lighter;
   // max-width: 400px;
-  height: 80px;
+  height: 55px;
   border: none;
   border-radius: 10px;
-  color: rgba(183, 178, 178, 0.5);
+  color: grey;
   box-shadow: 0 20px 10px -10px rgba(104, 108, 123, 0.5);
 }
 
@@ -38,7 +38,7 @@ input {
   display: inline-block;
   // width: 50px;
   height: 50px;
-  margin: 12px -75px;
+  margin: 2px -54px;
   transition: 1s;
 
 }
@@ -68,4 +68,5 @@ input {
 //   }
 // }
 .marker{
-  height: 45px;
+  height: 36px;
+}

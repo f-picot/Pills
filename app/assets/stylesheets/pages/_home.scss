@@ -99,7 +99,7 @@ iframe{
   text-align: left;
   padding-left: 10%;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 38px;
 }
 
 /* Heading */
@@ -171,9 +171,9 @@ iframe{
 
 .headline{
   font-family: Muli;
-  font-size: 50px;
+  font-size: 34px;
   padding-top: 4%;
-  padding-bottom: 5%;
+  padding-bottom: 1%;
   padding-left: 1%;
   // color: #11a9d7;
 }
@@ -202,9 +202,9 @@ iframe{
 
 .about-two{
   font-family: Muli;
-  font-size: 35px;
-  padding-top: 6%;
-  padding-bottom: 10%;
+  font-size: 30px;
+  padding-top: 8%;
+  padding-bottom: 1%;
   color: $blue;
 }
 
@@ -229,6 +229,7 @@ iframe{
   justify-content: center;
   font-family: Muli;
   margin-bottom: 5%;
+  font-size: 34px;
 }
 
 .section-three{
@@ -253,9 +254,9 @@ iframe{
 
 .p-two{
   display: inline-block;
-  font-weight: bold;
+  font-weight: 500;
   color: #9CB5B7;
-  font-size: 30px;
+  font-size: 24px;
   // padding: 15%;
   font-family: Muli;
 }
@@ -360,7 +361,7 @@ iframe{
 #backshape .row {
   display:block;
   // float:left;
-  margin:50px auto 200px;
+  margin:-22px auto 200px;
   width:100%;
   padding:0 8%;
   transform:skew(0deg,-5deg);
@@ -428,7 +429,7 @@ iframe{
 
 .searchome{
   width: 80%;
-  margin-top: 14%;
+  margin-top: 23%;
     /* z-index: 2; */
     /* margin-left: 60%; */
     /* position: absolute; */
@@ -439,5 +440,7 @@ iframe{
   padding-bottom: 5%;
   h2{
     color: #9CB5B7;
+    font-size: 24px;
+    font-weight: 500;
   }
 }
