@@ -6,24 +6,18 @@
         <p>Vos pills</p>
         <div class="items-count"><%= @cart.nb_items %></div>
       </div>
-      <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
+      <button type="button" class="btn btn-dismiss"><i class="fa fa-chevron-left"></i></button>
     </div>
     <div class="cart-info">
       <div class="cart-content">
         <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
         <p><%= @cart.delivery_location %></p>
       </div>
-      <div class="pencil-icon">
-        <div><i class="fa fa-pencil-square btn" data-toggle="modal" data-target="#pickers"></i></div>
-      </div>
     </div>
     <div class="cart-info">
       <div class="cart-content">
         <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
         <p>Livraison dans <%= @duration %> minutes</p>
-      </div>
-      <div class="pencil-icon">
-        <div><i class="fa fa-pencil-square btn" data-toggle="modal" data-target="#pickers"></i></div>
       </div>
     </div>
     <div class="cart-products">
@@ -38,20 +32,6 @@
           </div>
           <div class="item-total">
             <p><%= cart_item.quantity %> x <b><%= cart_item.pill.price %>€</b></p>
-            <div class="cart-control">
-              <%= simple_form_for [cart_item.pill, cart_item], method: :patch do |f| %>
-                <%= f.hidden_field :cart_id, value: @cart.id %>
-                <%= button_tag(type: 'submit', class: "divbutton-small") do %>
-                  <span>-</span>
-                <% end %>
-              <% end %>
-              <%= simple_form_for [cart_item.pill, cart_item], method: :post, url: pill_cart_items_path(cart_item.pill) do |f| %>
-                <%= f.hidden_field :cart_id, value: @cart.id %>
-                <%= button_tag(type: 'submit', class: "divbutton-small") do %>
-                  <span>+</span>
-                <% end %>
-              <% end %>
-            </div>
           </div>
         </div>
       <% end %>
@@ -84,8 +64,8 @@
             data-name="Mon Panier"
             data-email="<%= current_user.email %>"
             data-description="<%= @cart.delivery_location %>"
-            data-amount="<%= @cart.total %>"
-            data-currency="<%= %>"></script>
+            data-amount="<%= @cart.total_cents %>"
+            data-currency="<%= @cart.cart_items.first.pill.price.currency %>"></script>
         </div>
       <% end %>
     </div>
