@@ -3,30 +3,34 @@
   display: flex;
   justify-content: center;
   padding: 10px 10px 0 10px;
+  text-decoration: none;
 }
+
 .tabs a {
   color: $dark-gray;
 }
-.tabs a:hover {
+
+.tab a:hover {
   cursor: pointer;
   text-decoration: none;
   background-color: #effbfc;
 }
+
 .tabs h1 {
   font-size: 18px;
   font-weight: bold;
   margin-top: 0;
 }
+
 .tab {
   background-color: #e2e2e2;
-  flex: 0 0 28%;
+  flex: 0 0 24.5%;
   text-align: center;
   padding: 20px 0;
 }
 
 .tab-text {
   padding: 20px 0;
-  width: 442.4px;
 }
 
 .tab:first-child {
@@ -42,25 +46,8 @@
   color: $dark-gray;
 }
 
-
-.flexbox {
-  display: flex;
-  align-items: center;
-}
-
-.dashcard {
-  position: relative;
-  height: 175px;
-  width: 883.54px;
-  background-color: white;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  margin: 30px;
-}
-
 .dashcard-description {
-  position: absolute;
-  width: 100%;
-  font-size: 18px;
+  margin-top: 20px
 }
 
 .dashcard-description h1 {
