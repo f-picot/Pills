@@ -8,16 +8,13 @@
   color: $blue;
 }
 
-.modal-backdrop.in {
-    opacity: 0;
-  }
-
 .signup-wrapper {
   width: 80%;
   height: 80%;
   margin: auto;
   margin-top: 20px;
   color: $dark-gray;
+  font-family: Muli;
 }
 
 .cart-recap p {
@@ -33,4 +30,66 @@
   justify-content: space-around;
   font-size: 30px;
   margin: 8px;
+}
+
+.btn-f {
+  -moz-user-select: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Muli;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 14px;
+  outline: medium none;
+  padding: 9px 17px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  transition: transform 1s;
+}
+.btn-large-f {
+  padding: 13px 33px;
+  width: 100%;
+}
+.btn-facebook {
+  background-color: #3b5998;
+  width: 100%;
+}
+.btn-facebook:hover {
+  background-color: #23458b;
+}
+// .social .btn {
+//   width: 160px;
+// }
+// .social .btn:not(:last-child) {
+//   margin-right: 25px;
+// }
+
+.btn i[class^="fa-facebook"] {
+  font-size: 15px;
+  margin-right: 6px;
+  vertical-align: text-bottom;
+}
+
+.forgotten{
+  color: grey;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.forgotten:hover{
+  text-decoration: none;
+  color: $green;
+}
+
+.forgotten a{
+  text-decoration: none;
+  a:hover{
+    text-decoration: none;
+  }
 }
