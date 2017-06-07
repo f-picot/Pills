@@ -6,10 +6,23 @@
 }
 .category-button {
   background-color: white;
+  color: #D4D4D4;
   padding: 10px 20px;
   border: 1px solid #e2e2e2;
   margin: 0px 10px;
+  cursor: pointer;
+  border: none;
 }
+
+.category-button:hover {
+  color: $dark-gray;
+}
+
+.category-selected {
+  box-shadow: 0 11px 10px -10px rgba(104, 108, 123, 0.5);
+  color: red;
+}
+
 .designbar {
   border: none;
   box-shadow: none;
@@ -19,4 +32,27 @@
 
 #pill_name {
   color: $dark-gray;
+  border: none;
+  border-radius: 10px;
+  color: rgba(183, 178, 178, 0.5);
+  box-shadow: 0 11px 10px -10px rgba(104, 108, 123, 0.5);
+}
+
+#pill_name:focus{
+    outline: none;
+}
+
+#pill_name::-webkit-input-placeholder { /* Chrome */
+  color: #D4D4D4;
+}
+#pill_name:-ms-input-placeholder { /* IE 10+ */
+  color: #D4D4D4;
+}
+#pill_name::-moz-placeholder { /* Firefox 19+ */
+  color: #D4D4D4;
+  opacity: 1;
+}
+#pill_name:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #D4D4D4;
+  opacity: 1;
 }

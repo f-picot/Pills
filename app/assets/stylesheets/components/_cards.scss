@@ -2,7 +2,7 @@
   display: flex;
 }
 #search-bar-form {
-  margin-top: 25px;
+  margin-top: -20px;
   .form-group {
     margin-bottom: 0;
   }
@@ -17,11 +17,5 @@
     right: 41px;
     width: 14px;
     border: 0px;
-  }
-  .glyphicon-search {
-    position: relative;
-    right: 60px;
-    color: white;
-    font-size: 12px;
   }
 }
