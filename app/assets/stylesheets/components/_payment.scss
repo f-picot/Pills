@@ -1,0 +1,23 @@
+.checkout {
+  width: 380px;
+  height: 100vh;
+  background-color: $light-gray;
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: $blue;
+  box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cart-payment {
+  width: 380px;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1);
+}
