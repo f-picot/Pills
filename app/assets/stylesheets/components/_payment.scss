@@ -21,3 +21,32 @@
   justify-content: space-around;
   box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1);
 }
+
+.stripe-button-el {
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  span {
+    background: $blue !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 95% !important;
+    padding: 3px !important;
+    height: 40px !important;
+    line-height: 35px !important;
+    margin: auto !important;
+    font-size: 16px !important;
+    border-radius: 2px !important;
+    border: 1px solid #0fb5bf !important;
+    font-family: "Open Sans", "Helvetica", "sans-serif" !important;
+    text-shadow: none !important;
+  }
+}
+
+.fa-chevron-left {
+  color: $light-gray;
+  font-size: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
