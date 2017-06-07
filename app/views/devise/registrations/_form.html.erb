@@ -1,6 +1,5 @@
 <div class="cart-recap">
   <div class="cart-content-header">
-    <i type="button" class="fa fa-chevron-left btn btn-dismiss" data-toggle="modal" data-target="#signup"></i>
     <p>Mon compte</p>
   </div>
   <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
@@ -9,7 +8,7 @@
 
   <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br/>
     <% end -%>
   <% end -%>
 

@@ -8,11 +8,16 @@
   color: $blue;
 }
 
+.modal-backdrop.in {
+    opacity: 0;
+  }
+
 .signup-wrapper {
   width: 80%;
   height: 80%;
   margin: auto;
   margin-top: 20px;
+  color: $dark-gray;
 }
 
 .cart-recap p {
@@ -28,5 +33,4 @@
   justify-content: space-around;
   font-size: 30px;
   margin: 8px;
-
 }

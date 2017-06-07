@@ -1,0 +1,66 @@
+#pickers {
+  width: 380px;
+  height: 100vh;
+  background-color: $light-gray;
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: $blue;
+  p {
+    padding: 0 7px;
+    margin: 0;
+  }
+}
+
+.delivery-infos {
+  border-bottom: 0.3px solid #EFF1F4;
+  color: $blue;
+  height: auto;
+  width: 380px;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.signup-wrapper .form-control {
+  height: 40px;
+
+}
+
+.signup-wrapper .search {
+  height: 40px;
+  font-size: 16px;
+}
+
+.signup-wrapper .submit {
+  height: 30px;
+  width: 30px;
+}
+
+.glyph-size {
+  height: 19px;
+  width: 16px;
+}
+
+.search-modal .flexbox-demo .submit {
+  border-radius: 0;
+  margin: 0;
+  height: 40px;
+  width: 41px;
+}
+
+.search-modal .flexbox-demo .submit .glyph-size {
+  height: 19px;
+  width: 16px;
+  color: $blue;
+}
+
+.modal-map {
+  height: 40px;
+  width: 40px;
+  z-index: 3;
+}
+
+.change-delivery-time {
+  border-bottom: 0.3px solid #EFF1F4;
+  margin-bottom: 20px;
+}

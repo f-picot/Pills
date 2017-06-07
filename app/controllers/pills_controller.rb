@@ -27,8 +27,6 @@ class PillsController < ApplicationController
         })
     end
     @pills = Pill.all
-    # @cart.delivery_time = Date.new
-    @cart.delivery_time = Time.now
     @cart_item = CartItem.new
     @user = User.new
     if params[:pill]
@@ -57,10 +55,10 @@ class PillsController < ApplicationController
         destinationContactFirstName: "Clement",
         destinationContactLastName: "Peneranda"
       })
-# binding.pry
     @cart.update(delivery_price: @stuartquote["2"]["finalAmount"])
     @duration =  @stuartquote["2"]["duration"]
-
+    delivery_time = Time.now + @duration.to_i.minutes
+    @cart.update(delivery_time: delivery_time) unless @cart.delivery_time
   end
 
   private
