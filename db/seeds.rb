@@ -21,7 +21,6 @@ doliprane = Pill.create!(
   photo: "doliprane.png",
   brandphoto: "sanofi.png",
   capacity: "8 SACHETS DOSES"
-  price_cents: 210
   )
 
 spasfon = Pill.create!(

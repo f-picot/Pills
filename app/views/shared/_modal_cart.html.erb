@@ -1,0 +1,91 @@
+ <% if @cart.cart_items.any? %>
+  <div class="filled-cart">
+    <div class="cart-recap">
+      <div class="cart-content-header">
+        <i class="fa fa-medkit normal-icon"></i>
+        <p>Vos pills</p>
+        <div class="items-count"><%= @cart.nb_items %></div>
+      </div>
+      <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
+    </div>
+    <div class="cart-info">
+      <div class="cart-content">
+        <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
+        <p><%= @cart.delivery_location %></p>
+      </div>
+      <div class="pencil-icon">
+        <div><i class="fa fa-pencil-square btn" data-toggle="modal" data-target="#pickers"></i></div>
+      </div>
+    </div>
+    <div class="cart-info">
+      <div class="cart-content">
+        <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
+        <p>Livraison dans <%= @duration %> minutes</p>
+      </div>
+      <div class="pencil-icon">
+        <div><i class="fa fa-pencil-square btn" data-toggle="modal" data-target="#pickers"></i></div>
+      </div>
+    </div>
+    <div class="cart-products">
+      <% @cart.cart_items.each do |cart_item| %>
+        <div class="cart-product">
+          <div class="item-picture">
+            <%= image_tag cart_item.pill.photo %>
+          </div>
+          <div class="item-description">
+            <p><%= cart_item.pill.name %></p>
+            <p><%= cart_item.pill.capacity %></p>
+          </div>
+          <div class="item-total">
+            <p><%= cart_item.quantity %> x <b><%= cart_item.pill.price %>€</b></p>
+            <div class="cart-control">
+              <%= simple_form_for [cart_item.pill, cart_item], method: :patch, remote: true do |f| %>
+                <%= f.hidden_field :cart_id, value: @cart.id %>
+                <%= button_tag(type: 'submit', class: "divbutton-small") do %>
+                  <span>-</span>
+                <% end %>
+              <% end %>
+              <%= simple_form_for [cart_item.pill, cart_item], method: :post, url: pill_cart_items_path(cart_item.pill), remote: true do |f| %>
+                <%= f.hidden_field :cart_id, value: @cart.id %>
+                <%= button_tag(type: 'submit', class: "divbutton-small") do %>
+                  <span>+</span>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="cart-info">
+      <div class="cart-content">
+        <div class="blue-icon"><i class="fa fa-ambulance"></i></div>
+        <p>Frais de livraison</p>
+      </div>
+      <div class="delivery-fees">
+        <p><%= @cart.delivery_price %> €</p>
+      </div>
+    </div>
+    <div class="cart-total">
+      <div class="total underlined">
+        <p>Total</p>
+      </div>
+      <div class="sum">
+        <p><%= @cart.total %>€</p>
+      </div>
+    </div>
+    <div class="cart-validation">
+      <div class="btn btn-primary btn-mycart" data-dismiss="modal" data-toggle="modal" data-target="#signup">Etape suivante</div>
+    </div>
+  </div>
+<% else %>
+  <div class="empty-cart">
+    <button type="button" data-dismiss="modal" class="btn-dismiss-empty"><i class="fa fa-times blue-times"></i></button>
+    <div class="badge-icon">
+      <i class="fa fa-medkit large-icon"></i>
+    </div>
+    <div class="text-center">
+      <h2>Votre panier est vide</h2>
+      <p>Ajoutez des produits à votre commande</p>
+    </div>
+  </div>
+<% end %>

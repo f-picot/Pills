@@ -1,0 +1,35 @@
+<div class="cart-recap">
+  <div class="cart-content-header">
+    <p>Mes informations de livraison</p>
+  </div>
+  <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
+</div>
+<div class="delivery-infos">
+  <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
+  <p>au <%= @cart.delivery_location %></p>
+</div>
+<div class="signup-wrapper">
+  <div class="change-delivery-time">
+    <p class="text-center">Modifier l'heure de livraison</p>
+    <%= simple_form_for @cart do |f| %>
+      <!-- <div class="form-group"> -->
+        <!-- <div class='input-group date' id='datetimepicker3'> -->
+          <%= f.input :delivery_time, as: :string, input_html: {class: "date", id:"datetimepicker3"} %>
+          <!-- <input type='text' class="form-control" /> -->
+        <!-- </div> -->
+      <!-- </div> -->
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <p class="text-center">Modifier le lieu de livraison</p>
+  <div class="search-modal">
+    <%= form_tag(pills_path, method: "get") do %>
+      <div class="flexbox-demo">
+        <%= text_field_tag :search, params[:search], placeholder: "Pick an address...", class: "search", id: "search_place" %>
+        <%= button_tag(type: "submit", class: "submit", id: "home_button") do %>
+          <i class="glyphicon glyphicon-map-marker glyph-size"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
