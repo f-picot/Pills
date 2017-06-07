@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dashboards/show'
+  get 'dashboard', to: "dashboards#show"
 
   resources :pills, only: [:index] do
     resources :cart_items, only: [:create, :update]
