@@ -8,7 +8,7 @@
 
   <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br/>
+      <%= link_to "Connexion avec #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br/>
     <% end -%>
   <% end -%>
 
@@ -22,7 +22,7 @@
     </div>
 
     <div class="form-actions btn">
-      <%= f.button :submit, "Se connecter" %>
+      <%= f.button :submit, "Créer un compte" %>
     </div>
   <% end %>
 
@@ -31,7 +31,7 @@
   <% end -%>
 
   <%- if controller_name != 'sessions' %>
-  <%= link_to "S'enregistrer", new_session_path(resource_name) %><br />
+  <%= link_to "Connexion", new_session_path(resource_name) %><br />
   <% end -%>
 
 </div>

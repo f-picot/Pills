@@ -3,17 +3,11 @@
 <div class="order-banner">
   <div class="pickers">
     <div class="map-text">
-      <div class="place-picker">
-        <p><%= @cart.delivery_location %></p>
-        <div class="btn" data-toggle="modal" data-target="">
-          <p>MODIFIER LE LIEU DE LIVRAISON</p>
-        </div>
-      </div>
-      <div class="timeslot">
-        <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
-        <div class="btn" data-toggle="modal" data-target="#pickers">
-          <p>MODIFIER L'HEURE DE LIVRAISON</p>
-        </div>
+      <p><%= @cart.delivery_location %></p>
+      <p>|</p>
+      <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
+      <div class="btn btn-pencil" data-toggle="modal" data-target="#pickers">
+        <i class="fa fa-pencil-square"></i>
       </div>
     </div>
   </div>
@@ -27,7 +21,7 @@
     <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
   </div>
   <div class="delivery-infos">
-    <p>Livraison prévue à <%= @cart.delivery_time %></p>
+    <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
     <p>au <%= @cart.delivery_location %></p>
   </div>
   <div class="signup-wrapper">
@@ -178,7 +172,7 @@
         </div>
       </div>
       <div class="cart-validation">
-        <div class="btn btn-primary btn-mycart" data-toggle="modal" data-target="#signup">Etape suivante</div>
+        <div class="btn btn-primary btn-mycart" data-dismiss="modal" data-toggle="modal" data-target="#signup">Etape suivante</div>
       </div>
     </div>
   <% else %>
