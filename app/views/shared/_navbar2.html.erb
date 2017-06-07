@@ -1,0 +1,22 @@
+<div class="navbar-pills">
+
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-pills-brand" do %>
+  <%= image_tag "logobleu.png"  %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <div class="cart-btn-modal">
+      <div class="cart-wrapper">
+        <div class="cart-button btn btn-primary" data-toggle="modal" data-target="#mycart">
+          <i class="fa fa-medkit normal-icon"></i>
+          <div class="items-count"><%= @cart.nb_items %></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

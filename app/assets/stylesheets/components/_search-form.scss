@@ -16,7 +16,7 @@ input {
 
 .search {
   padding: 0 30px;
-  font-size: 19px;
+  font-size: 16px;
   width: 100%;
   font-family: Muli;
   font-weight: lighter;
@@ -24,7 +24,7 @@ input {
   height: 55px;
   border: none;
   border-radius: 10px;
-  color: grey;
+  color: #858585 !important;
   box-shadow: 0 20px 10px -10px rgba(104, 108, 123, 0.5);
 }
 
@@ -68,4 +68,24 @@ input {
 // }
 .marker{
   height: 36px;
+}
+
+
+#search_place:focus{
+    outline: none;
+}
+
+#search_place::-webkit-input-placeholder { /* Chrome */
+  color: #D4D4D4;
+}
+#search_place:-ms-input-placeholder { /* IE 10+ */
+  color: #D4D4D4;
+}
+#search_place::-moz-placeholder { /* Firefox 19+ */
+  color: #D4D4D4;
+  opacity: 1;
+}
+#search_place:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #D4D4D4;
+  opacity: 1;
 }

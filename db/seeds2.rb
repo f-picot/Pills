@@ -64,16 +64,16 @@ strepsils = Pill.create!(
   capacity: "24 PASTILLES"
   )
 
-strepsils = Pill.create!(
-  name: "Strepsils",
-  brand: "Reckitt Benckiser",
-  description: "Médicament pour les maux de gorge",
+cotopads = Pill.create!(
+  name: "Cotopads",
+  brand: "Lohmann",
+  description: "Ce coton est idéal pour les soins quotidien",
   price: 5.20,
-  category: "Douleurs",
+  category: "Pansements",
   stock: 80,
-  photo: "strepsils.png",
-  brandphoto: "reckitt.png",
-  capacity: "24 PASTILLES"
+  photo: "cotopads.png",
+  brandphoto: "lohmann.png",
+  capacity: "500 Pièces"
   )
 
 exomega = Pill.create!(
@@ -90,7 +90,7 @@ exomega = Pill.create!(
 
 actirub = Pill.create!(
   name: "Actirub",
-  brand: "Santé Verte",
+  brand: "santeverte",
   description: "Permet de traiter le rhume",
   price: 11.30,
   category: "Bien-être",
@@ -100,5 +100,52 @@ actirub = Pill.create!(
   capacity: "15 sachets"
   )
 
+adiaril = Pill.create!(
+  name: "adiaril",
+  brand: "santeverte",
+  description: "Sachets de réhydratation pour les diarrhées du nourrisson",
+  price: 5.90,
+  category: "Bébés",
+  stock: 80,
+  photo: "adiaril.png",
+  brandphoto: "santeverte.png",
+  capacity: "125 g le sachet"
+  )
+
+ergymunil = Pill.create!(
+  name: "ergymunil",
+  brand: "nutergia",
+  description: "Complexe pour booster votre immunité",
+  price: 20.90,
+  category: "Immunité",
+  stock: 80,
+  photo: "ergymunil.png",
+  brandphoto: "nutergia.png",
+  capacity: "150 mL"
+  )
+
+ergymunil = Pill.create!(
+  name: "gallialait",
+  brand: "gallia",
+  description: "Lait infantil pour les nourrissons",
+  price: 6.30,
+  category: "Bébés",
+  stock: 80,
+  photo: "gallialait.png",
+  brandphoto: "gallia.png",
+  capacity: "500 mg"
+  )
+
+ergymunil = Pill.create!(
+  name: "suppositoires-glycerine",
+  brand: "Ipsen",
+  description: "Des suppositoires pour faire face à la constipation",
+  price: 13.40,
+  category: "Constipation",
+  stock: 80,
+  photo: "suppositoires-glycerine.png",
+  brandphoto: "ipsen.png",
+  capacity: "24 suppos"
+  )
 
 puts "Pills seeded"

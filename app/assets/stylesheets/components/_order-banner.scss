@@ -1,6 +1,6 @@
 .order-banner {
   position: absolute;
-  top: 170px;
+  top: 85px;
   width: 100%;
   text-align: center;
   p {
@@ -16,6 +16,9 @@
 
 .map {
   position: relative;
+  margin-top: -5%;
+  z-index: -1;
+  box-shadow: 0 6px 9px -10px rgba(104, 108, 123, 0.5);
 }
 
 .change-timeslot {

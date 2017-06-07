@@ -280,9 +280,10 @@
 }
 
 .cart-btn-modal {
-  position: absolute;
   top: 0;
   right: 0;
+  position: fixed;
+  z-index: 20000;
 }
 
 .divbutton-small {

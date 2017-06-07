@@ -31,7 +31,8 @@ class PillsController < ApplicationController
     @user = User.new
     if params[:pill]
       if params[:pill][:name] != ""
-        @pills = Pill.where("name ILIKE ? OR category ILIKE ?", params[:pill][:name], params[:pill][:name])
+        @pills = Pill.where("name ILIKE ? OR category ILIKE ?", "%#{params[:pill][:name]}%", "#%{params[:pill][:name]}%")
+        # @categories = @pills.map { |pill| pill.category } .uniq
         respond_to do |format|
           format.html { redirect_to pills_path }
           format.js
@@ -39,26 +40,22 @@ class PillsController < ApplicationController
       end
     end
 
-    @categories = []
-    @pills.each do |pill|
-      if pill.category
-        @categories << pill.category
-      end
-    @categories.uniq!
-    end
+    @categories = @pills.pluck(:category).uniq
 
-    @stuartquote = StuartApi.new.create_job_quote({
-        origin: "8 Rue de Joinville, 75019",
-        destination: "16 Villa Gaudelet, 75011",
-        transportTypeIds: "2",
-        originCompanyContact: "MaPharmacie",
-        destinationContactFirstName: "Clement",
-        destinationContactLastName: "Peneranda"
-      })
-    @cart.update(delivery_price: @stuartquote["2"]["finalAmount"])
-    @duration =  @stuartquote["2"]["duration"]
-    delivery_time = Time.now + @duration.to_i.minutes
-    @cart.update(delivery_time: delivery_time) unless @cart.delivery_time
+    if @cart.delivery_time.blank?
+      @stuartquote = StuartApi.new.create_job_quote({
+          origin: "8 Rue de Joinville, 75019",
+          destination: "16 Villa Gaudelet, 75011",
+          transportTypeIds: "2",
+          originCompanyContact: "MaPharmacie",
+          destinationContactFirstName: "Clement",
+          destinationContactLastName: "Peneranda"
+        })
+      @cart.update(delivery_price: @stuartquote["2"]["finalAmount"])
+      @duration =  @stuartquote["2"]["duration"]
+      delivery_time = Time.now + @duration.to_i.minutes
+      @cart.update(delivery_time: delivery_time) unless @cart.delivery_time
+    end
   end
 
   private

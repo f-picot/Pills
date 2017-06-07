@@ -1,4 +1,4 @@
-<div class="map" id="map" style="width: 100%; height: 200px;"></div>
+<div class="map" id="map" style="width: 100%; height: 250px;"></div>
 
 <div class="order-banner">
   <div class="pickers">
@@ -22,14 +22,28 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_tag(pills_path, method: "get", remote: true) do %>
+    <%= form_tag pills_path, method: "get", remote: true, id: "search_pill" do %>
       <div id="search-bar-form" class="flexbox-demo">
-        <%= text_field_tag "pill[name]", "", placeholder: "Search a medoc", class: "search", id: "pill_name" %>
+        <%= text_field_tag "pill[name]", "", placeholder: "Chercher un médicament...", class: "search", id: "pill_name" %>
         <%= button_tag type: 'submit', class: "submit", id: "home_button"  do %>
             <i class="glyphicon fa fa-search glyph-size"></i>
         <% end %>
       </div>
     <% end %>
+
+    <div id="categories-container">
+         <% @categories.each do |category| %>
+           <div class="category-button" data-category="<%= category %>"><%= category %></div>
+           <%#= link_to pills_path(category: category), remote: true do  %>
+       <!--     <div>
+             <%#= category %>
+           </div>
+        -->
+           <%# end %>
+         <% end %>
+       </div>
+  </div>
+</div>
 
 <div class="modal fade" id="pickers">
   <div class="cart-recap">
@@ -69,42 +83,8 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class='col-sm-4 col-sm-offset-4'>
-      <%= simple_form_for(:pill, url: pills_path, method: :get, remote: true) do |k| %>
-        <div id="search-bar-form" class="flexbox">
-          <%= k.input :name, label: false, placeholder: "Search a pill", class: "navbar-wagon-search-input", id: "search_name" %>
-          <%= k.button :submit, class: "btn btn-primary ", id: "home_button", value:"" %>
-            <i class="glyphicon glyphicon-search"></i>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
-</div>
-
-<div id="categories-container">
-  <% @categories.each do |category| %>
-    <div class="category-button" data-category="<%= category %>"><%= category %></div>
-    <%#= link_to pills_path(category: category), remote: true do  %>
-<!--     <div>
-      <%#= category %>
-    </div>
- -->
-    <%# end %>
-  <% end %>
-</div>
 
 <div class="wrapper">
-  <div class="cart-btn-modal">
-    <div class="cart-wrapper">
-      <div class="cart-button btn btn-primary" data-toggle="modal" data-target="#mycart">
-        <i class="fa fa-medkit normal-icon"></i>
-        <div class="items-count"><%= @cart.nb_items %></div>
-      </div>
-    </div>
-  </div>
   <div class="customcontainer">
     <div class="row">
       <div id="pill-card">
