@@ -8,7 +8,13 @@
 
   <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br/>
+      <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+        <div class="social text-center">
+          <div class="btn-f btn-large-f btn-facebook"><i class="fa fa-facebook"></i> S'inscrire avec Facebook
+          </div>
+        </div>
+      <% end %>
+        <h3 class="text-center">ou</h3>
     <% end -%>
   <% end -%>
 
@@ -20,18 +26,21 @@
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
       <%= f.input :password_confirmation, required: true %>
     </div>
-
-    <div class="form-actions btn">
-      <%= f.button :submit, "Se connecter" %>
+    <div class="form-actions text-center">
+      <%= f.button :submit, "S'inscrire", class: "btn-primary" %>
     </div>
   <% end %>
 
+        <div class="forgotten">
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-      <%= link_to "MOT DE PASSE OUBLIE?", new_password_path(resource_name) %><br />
+      <%= link_to new_password_path(resource_name) do %>
+          <p>Mot de passe oublié ?</p>
+        </div>
+      <% end %>
+    <br/>
   <% end -%>
-
-  <%- if controller_name != 'sessions' %>
-  <%= link_to "S'enregistrer", new_session_path(resource_name) %><br />
-  <% end -%>
+<!--   %- if controller_name != 'sessions' %>
+  %= link_to "Se connecter", new_session_path(resource_name) %><br />
+  % end -%> -->
 
 </div>

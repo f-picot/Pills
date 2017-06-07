@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 10px 20px;
+  padding: 5px 20px;
   background-color: $blue;
   border-radius: 20em;
   opacity: 0.9;
@@ -48,17 +48,6 @@
   font-size: 10px;
 }
 
-.timeslot {
-  border-left: 1px solid white;
-  width: 220px;
-  padding-left: 15px;
-}
-
-.place-picker {
-  width: 220px;
-  padding-right: 15px;
-}
-
 .btn:hover {
   color: #0d9ea8;
 }
@@ -71,4 +60,9 @@
 .input-group-addon {
   color: $blue;
   border-radius: 4px;
+}
+
+.btn-pencil {
+  font-size: 25px;
+  padding: 0 7px;
 }

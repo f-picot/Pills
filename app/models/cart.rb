@@ -11,4 +11,8 @@ class Cart < ApplicationRecord
   def total
     self.cart_items.inject(delivery_price) { |sum, cart_item| sum + (cart_item.pill.price.to_d * cart_item.quantity) }
   end
+
+  def total_cents
+    total * 100
+  end
 end

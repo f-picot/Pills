@@ -27,13 +27,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="082ced60-baeb-48be-aee8-1d1300d0468a";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.im/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 </head>
 <body class="<%= controller_name %>-<%= action_name %>">
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
   <%= yield %>
-  <%= render 'shared/footer' %>
   <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>

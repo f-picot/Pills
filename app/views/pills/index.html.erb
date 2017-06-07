@@ -3,58 +3,18 @@
 <div class="order-banner">
   <div class="pickers">
     <div class="map-text">
-      <div class="place-picker">
-        <p><%= @cart.delivery_location %></p>
-        <div class="btn" data-toggle="modal" data-target="">
-          <p>MODIFIER LE LIEU DE LIVRAISON</p>
-        </div>
-      </div>
-      <div class="timeslot">
-        <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
-        <div class="btn" data-toggle="modal" data-target="#pickers">
-          <p>MODIFIER L'HEURE DE LIVRAISON</p>
-        </div>
+      <p><%= @cart.delivery_location %></p>
+      <p>|</p>
+      <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
+      <div class="btn btn-pencil" data-toggle="modal" data-target="#pickers">
+        <i class="fa fa-pencil"></i>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal fade" id="pickers">
-  <div class="cart-recap">
-    <div class="cart-content-header">
-      <p>Mes informations de livraison</p>
-    </div>
-    <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
-  </div>
-  <div class="delivery-infos">
-    <p>Livraison prévue à <%= @cart.delivery_time %></p>
-    <p>au <%= @cart.delivery_location %></p>
-  </div>
-  <div class="signup-wrapper">
-    <div class="change-delivery-time">
-      <p class="text-center">Modifier l'heure de livraison</p>
-      <%= simple_form_for @cart do |f| %>
-        <!-- <div class="form-group"> -->
-          <!-- <div class='input-group date' id='datetimepicker3'> -->
-            <%= f.input :delivery_time, as: :string, input_html: {class: "date", id:"datetimepicker3"} %>
-            <!-- <input type='text' class="form-control" /> -->
-          <!-- </div> -->
-        <!-- </div> -->
-        <%= f.submit %>
-      <% end %>
-    </div>
-    <p class="text-center">Modifier le lieu de livraison</p>
-    <div class="search-modal">
-      <%= form_tag(pills_path, method: "get") do %>
-        <div class="flexbox-demo">
-          <%= text_field_tag :search, params[:search], placeholder: "Pick an address...", class: "search", id: "search_place" %>
-          <%= button_tag(type: "submit", class: "submit", id: "home_button") do %>
-            <i class="glyphicon glyphicon-map-marker glyph-size"></i>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render "shared/modal_pickers" %>
 </div>
 
 <div class="container">
@@ -102,97 +62,7 @@
 </div>
 
 <div class="modal fade" id="mycart">
-  <% if @cart.cart_items.any? %>
-    <div class="filled-cart">
-      <div class="cart-recap">
-        <div class="cart-content-header">
-          <i class="fa fa-medkit normal-icon"></i>
-          <p>Vos pills</p>
-          <div class="items-count"><%= @cart.nb_items %></div>
-        </div>
-        <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
-      </div>
-      <div class="cart-info">
-        <div class="cart-content">
-          <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
-          <p><%= @cart.delivery_location %></p>
-        </div>
-        <div class="pencil-icon">
-          <div><i class="fa fa-pencil-square btn" data-toggle="modal" data-target="#pickers"></i></div>
-        </div>
-      </div>
-      <div class="cart-info">
-        <div class="cart-content">
-          <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
-          <p>Livraison dans <%= @duration %> minutes</p>
-        </div>
-        <div class="pencil-icon">
-          <div><i class="fa fa-pencil-square btn" data-toggle="modal" data-target="#pickers"></i></div>
-        </div>
-      </div>
-      <div class="cart-products">
-        <% @cart.cart_items.each do |cart_item| %>
-          <div class="cart-product">
-            <div class="item-picture">
-              <%= image_tag cart_item.pill.photo %>
-            </div>
-            <div class="item-description">
-              <p><%= cart_item.pill.name %></p>
-              <p><%= cart_item.pill.capacity %></p>
-            </div>
-            <div class="item-total">
-              <p><%= cart_item.quantity %> x <b><%= cart_item.pill.price %>€</b></p>
-              <div class="cart-control">
-                <%= simple_form_for [cart_item.pill, cart_item], method: :patch do |f| %>
-                  <%= f.hidden_field :cart_id, value: @cart.id %>
-                  <%= button_tag(type: 'submit', class: "divbutton-small") do %>
-                    <span>-</span>
-                  <% end %>
-                <% end %>
-                <%= simple_form_for [cart_item.pill, cart_item], method: :post, url: pill_cart_items_path(cart_item.pill) do |f| %>
-                  <%= f.hidden_field :cart_id, value: @cart.id %>
-                  <%= button_tag(type: 'submit', class: "divbutton-small") do %>
-                    <span>+</span>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <div class="cart-info">
-        <div class="cart-content">
-          <div class="blue-icon"><i class="fa fa-ambulance"></i></div>
-          <p>Frais de livraison</p>
-        </div>
-        <div class="delivery-fees">
-          <p><%= @cart.delivery_price %> €</p>
-        </div>
-      </div>
-      <div class="cart-total">
-        <div class="total underlined">
-          <p>Total</p>
-        </div>
-        <div class="sum">
-          <p><%= @cart.total %>€</p>
-        </div>
-      </div>
-      <div class="cart-validation">
-        <div class="btn btn-primary btn-mycart" data-toggle="modal" data-target="#signup">Etape suivante</div>
-      </div>
-    </div>
-  <% else %>
-    <div class="empty-cart">
-      <button type="button" data-dismiss="modal" class="btn-dismiss-empty"><i class="fa fa-times blue-times"></i></button>
-      <div class="badge-icon">
-        <i class="fa fa-medkit large-icon"></i>
-      </div>
-      <div class="text-center">
-        <h2>Votre panier est vide</h2>
-        <p>Ajoutez des produits à votre commande</p>
-      </div>
-    </div>
-  <% end %>
+  <%= render "shared/modal_cart" %>
 </div>
 
 <div class="modal fade" id="signup">
