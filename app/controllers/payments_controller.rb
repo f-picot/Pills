@@ -29,8 +29,8 @@ end
 private
 
   def set_cart
-    @current_cart = Cart.find(session[:cart_id])
-    @current_cart.user = current_user
+    @cart = Cart.find(session[:cart_id])
+    @cart.user = current_user
   end
 end
 
