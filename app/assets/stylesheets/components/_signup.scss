@@ -62,14 +62,14 @@
 .btn-facebook:hover {
   background-color: #23458b;
 }
-.social .btn {
-  width: 160px;
-}
-.social .btn:not(:last-child) {
-  margin-right: 25px;
-}
+// .social .btn {
+//   width: 160px;
+// }
+// .social .btn:not(:last-child) {
+//   margin-right: 25px;
+// }
 
-.btn i[class^="fa"] {
+.btn i[class^="fa-facebook"] {
   font-size: 15px;
   margin-right: 6px;
   vertical-align: text-bottom;
