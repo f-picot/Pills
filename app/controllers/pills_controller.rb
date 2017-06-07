@@ -32,7 +32,6 @@ class PillsController < ApplicationController
     if params[:pill]
       if params[:pill][:name] != ""
         @pills = Pill.where("name ILIKE ? OR category ILIKE ?", "%#{params[:pill][:name]}%", "#%{params[:pill][:name]}%")
-        # @categories = @pills.map { |pill| pill.category } .uniq
         respond_to do |format|
           format.html { redirect_to pills_path }
           format.js
