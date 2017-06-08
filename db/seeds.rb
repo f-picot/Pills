@@ -126,13 +126,13 @@ ergymunil = Pill.create!(
   price: 20.90,
   category: "Immunité",
   stock: 80,
-  photo: "ergymunil.png",
+  photo: "ergymunyl.png",
   brandphoto: "nutergia.png",
   capacity: "150 mL"
   )
 
-ergymunil = Pill.create!(
-  name: "gallialait",
+gallia = Pill.create!(
+  name: "Lait infantil Gallia",
   brand: "gallia",
   description: "Lait infantil pour les nourrissons",
   price: 6.30,
@@ -143,8 +143,8 @@ ergymunil = Pill.create!(
   capacity: "500 mg"
   )
 
-ergymunil = Pill.create!(
-  name: "suppositoires-glycerine",
+suppo = Pill.create!(
+  name: "Suppositoires à la glycérine",
   brand: "Ipsen",
   description: "Des suppositoires pour faire face à la constipation",
   price: 13.40,
