@@ -51,7 +51,7 @@ class PillsController < ApplicationController
         })
       @cart.update(delivery_price: @stuartquote["2"]["finalAmount"])
       @duration =  @stuartquote["2"]["duration"]
-      delivery_time = Time.now + @duration.to_i.minutes
+      delivery_time = Time.zone.now + @duration.to_i.minutes
       @cart.update(delivery_time: delivery_time) unless @cart.delivery_time
     end
   end

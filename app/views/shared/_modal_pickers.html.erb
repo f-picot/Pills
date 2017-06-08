@@ -2,15 +2,29 @@
   <div class="cart-content-header">
     <p>Mes informations de livraison</p>
   </div>
-  <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
+  <button type="button" data-dismiss="modal" class="btn btn-dismiss" data-toggle="modal" data-target="#mycart"><i class="fa fa-times"></i></button>
 </div>
-<div class="delivery-infos">
-  <p>Livraison prévue à <strong><%= @cart.delivery_time.strftime('%H:%M') %></strong></p>
-  <p>au <strong><%= @cart.delivery_location %></strong></p>
+<div class="cart-infos">
+  <div class="cart-content">
+    <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
+    <p>Livraison prévue à <strong><%= @cart.delivery_time.strftime('%Hh%M') %></strong></p>
+  </div>
 </div>
-<div class="signup-wrapper">
-  <div class="change-delivery-time">
-    <p class="text-center underline">Modifier l'heure de livraison</p>
+<div class="cart-infos">
+  <div class="cart-content">
+    <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
+    <p><strong><%= @cart.delivery_location %></strong></p>
+  </div>
+</div>
+
+<div class="cart-change">
+  <div class="total underlined">
+    <p>Modifier l'heure de livraison</p>
+  </div>
+</div>
+
+<div class="pickers-wrapper">
+  <div class="timepicker">
     <%= simple_form_for @cart do |f| %>
       <!-- <div class="form-group"> -->
         <!-- <div class='input-group date' id='datetimepicker3'> -->
@@ -23,7 +37,13 @@
       </div>
     <% end %>
   </div>
-  <p class="text-center underline deasy">Modifier le lieu de livraison</p>
+</div>
+<div class="cart-change">
+  <div class="total underlined">
+    <p>Modifier le lieu de livraison</p>
+  </div>
+</div>
+<div class="pickers-wrapper-two">
   <div class="search-modal">
     <%= form_tag(pills_path, method: "get") do %>
       <div class="flexbox-demo-modal">
