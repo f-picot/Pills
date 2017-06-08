@@ -23,8 +23,40 @@
   width: 100%;
 }
 
+.yo-button {
+  border-radius: 50px;
+  border: 1px solid transparent;
+  border-color: #0fb5bf;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  width: 50px;
+  opacity: 0.8;
+  position: fixed;
+  top: 10px;
+  left: 40px;
+  background-color: $blue;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.yo-button p {
+  margin: 0 0 4px;
+}
+
+.yo-button:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #0d9ea8;
+  border-color: #0b7f87;
+}
+
 .navbar-pills-brand img {
   // justify-content: space-between;
   width: 12%;
-  margin-top: 25px;
+  margin-top: 10px;
+  margin-left: 40px;
 }
