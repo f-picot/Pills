@@ -31,20 +31,20 @@
   align-items: center;
   display: flex;
   justify-content: space-around;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   opacity: 0.8;
   position: fixed;
   top: 10px;
   left: 40px;
   background-color: $blue;
   color: white;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
 }
 
 .yo-button p {
-  margin: 0 0 4px;
+  margin: 0 0 0px;
 }
 
 .yo-button:hover {
