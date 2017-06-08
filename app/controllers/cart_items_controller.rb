@@ -16,6 +16,7 @@ class CartItemsController < ApplicationController
   end
 
   def update
+    @pills = Pill.all
     @pill = Pill.find(params[:pill_id])
     @current_cart = Cart.find(params[:cart_item][:cart_id])
     @cart = @current_cart

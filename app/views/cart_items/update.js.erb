@@ -1,1 +1,8 @@
 $("#mycart").html("<%= j render 'shared/modal_cart' %>")
+
+var pill_id = <%= raw @cart_item.pill.id %>;
+<% @pill = @cart_item.pill %>
+<% @cart_item = CartItem.new %>
+$(".card-pill-container[data-pill-id=" + pill_id + "]").html("<%= j render 'pills/card-pill', pill: @pill %>");
+$(".cart-wrapper .items-count").text("<%= @cart.nb_items  %>")
+
