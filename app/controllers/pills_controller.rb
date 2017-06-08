@@ -20,7 +20,7 @@ class PillsController < ApplicationController
         marker.lat location[0].latitude
         marker.lng location[0].longitude
         marker.picture ({
-                        "url" => ApplicationController.helpers.asset_path("marker.png"),
+                        "url" => ApplicationController.helpers.asset_path("pipill.png"),
                         "width" => 50,
                         "height" => 50,
         })
