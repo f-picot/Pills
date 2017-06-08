@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_cart
-  layout "payment", only: [ :new ]
+  layout "Paiement", only: [ :new ]
 
   def new
   end
@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @cart.total_cents.to_i, # or amount_pennies
-      description:  "Payment for pills for cart #{@cart.id}",
+      description:  "Paiement du panier #{@cart.id}",
       currency:     @cart.currency
     )
 
