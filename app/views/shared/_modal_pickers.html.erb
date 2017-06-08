@@ -23,19 +23,21 @@
   </div>
 </div>
 
-<div class="pickers-wrapper">
-  <div class="timepicker">
-    <%= simple_form_for @cart do |f| %>
-      <!-- <div class="form-group"> -->
-        <!-- <div class='input-group date' id='datetimepicker3'> -->
-          <%= f.input :delivery_time, label: false, as: :string, input_html: {class: "date", id:"datetimepicker3"} %>
-          <!-- <input type='text' class="form-control" /> -->
+<div class="whiter">
+  <div class="pickers-wrapper">
+    <div class="timepicker">
+      <%= simple_form_for @cart do |f| %>
+        <!-- <div class="form-group"> -->
+          <!-- <div class='input-group date' id='datetimepicker3'> -->
+            <%= f.input :delivery_time, label: false, as: :string, input_html: {class: "date", id:"datetimepicker3"} %>
+            <!-- <input type='text' class="form-control" /> -->
+          <!-- </div> -->
         <!-- </div> -->
-      <!-- </div> -->
-      <div class="flexible text-center">
-      <%= f.submit class: "btn btn-primary" %>
-      </div>
-    <% end %>
+        <div class="flexible text-center">
+        <%= f.submit class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class="cart-change">
@@ -43,15 +45,17 @@
     <p>Modifier le lieu de livraison</p>
   </div>
 </div>
-<div class="pickers-wrapper-two">
-  <div class="search-modal">
-    <%= form_tag(pills_path, method: "get") do %>
-      <div class="flexbox-demo-modal">
-        <%= text_field_tag :search, params[:search], placeholder: "Entrer votre adresse de livraison...", class: "search", id: "search_place" %>
-        <%= button_tag(type: "submit", class: "submit", id: "home_button") do %>
-          <i class="glyphicon glyphicon-map-marker glyph-size"></i>
-        <% end %>
-      </div>
-    <% end %>
+<div class="whiter-two">
+  <div class="pickers-wrapper-two">
+    <div class="search-modal">
+      <%= form_tag(pills_path, method: "get") do %>
+        <div class="flexbox-demo-modal">
+          <%= text_field_tag :search, params[:search], placeholder: "Entrer votre adresse de livraison...", class: "search", id: "search_place" %>
+          <%= button_tag(type: "submit", class: "submit", id: "home_button") do %>
+            <i class="glyphicon glyphicon-map-marker glyph-size"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
