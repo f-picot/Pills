@@ -8,7 +8,7 @@ input {
   text-align: center;
   position: relative;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 5%;
   justify-content: inherit;
   display: flex;
   // height: 80px;
@@ -40,10 +40,6 @@ input {
   height: 50px;
   margin: 2px -54px;
   transition: 1s;
-}
-
-.submit:hover{
-  background-color: rgba(17, 169, 215, 0.14);
 }
 
 .glyph-size{
