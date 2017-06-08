@@ -20,8 +20,7 @@ class PaymentsController < ApplicationController
 
     #@order.update(payment: charge.to_json, state: 'paid')
     @cart.update(status: 'paid')
-    redirect_to "/payement-done"
-    # redirect_to pills_path
+    redirect_to pills_path(paid: "yes")
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

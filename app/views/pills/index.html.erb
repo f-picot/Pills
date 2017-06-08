@@ -61,10 +61,16 @@
   <%= render "devise/registrations/form" %>
 </div>
 
+<div class="modal fade" id="paymentmodal">
+  <%= render "payments/modalpayment" %>
+</div>
+
 <% content_for(:after_js) do %>
   <script>
     $(document).ready(function() {
-
+      <% if @payment_done %>
+        $('#paymentmodal').modal('show');
+      <% end %>
       $('#datetimepicker3').datetimepicker({
         format: 'HH:mm',
       });
