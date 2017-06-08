@@ -24,7 +24,8 @@ input {
   height: 55px;
   border: none;
   border-radius: 10px;
-  color: #858585 !important;
+  // color: #858585 !important;
+  color: #9E9E9E;
   box-shadow: 0 20px 10px -10px rgba(104, 108, 123, 0.5);
 }
 
@@ -40,6 +41,10 @@ input {
   height: 50px;
   margin: 2px -54px;
   transition: 1s;
+}
+
+.submit:hover{
+  // background-color: rgba(17, 169, 215, 0.14);
 }
 
 .glyph-size{
