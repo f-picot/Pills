@@ -15,4 +15,10 @@ class Cart < ApplicationRecord
   def total_cents
     total * 100
   end
+
+  def currency
+    if self.cart_items.any? && self.cart_items.first.pill
+      self.cart_items.first.pill.price.currency
+    end
+  end
 end
