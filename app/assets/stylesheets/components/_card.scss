@@ -68,6 +68,17 @@
   }
 }
 
+button:focus {
+  outline: none !important;
+}
+.btn:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+.btn:active {
+  box-shadow: none !important;
+}
+
 .flexbox {
   justify-content: center;
   align-items: center;

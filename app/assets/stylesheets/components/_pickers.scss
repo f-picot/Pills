@@ -21,24 +21,10 @@
   margin-left: 15px;
 }
 
-.signup-wrapper .form-control {
-  height: 40px;
-
-}
-
-.signup-wrapper .search {
-  height: 40px;
-  font-size: 16px;
-}
-
-.signup-wrapper .submit {
-  height: 30px;
-  width: 30px;
-}
-
 .glyph-size {
   height: 19px;
   width: 0%;
+  right: -10px;
 }
 
 .change-delivery-time {
@@ -70,7 +56,7 @@
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-weight: bold;
   margin-top: 10px;
   box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.1);
@@ -101,8 +87,52 @@
   background-color: white;
   border-bottom: 0.3px solid #EFF1F4;
   padding-bottom: 42px;
+  margin-bottom: 20px;
 }
 
 .modal{
   padding-right: 0 !important;
+}
+
+.blue-icon-two {
+  color: $blue;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  margin: 2.7px;
+}
+
+.cart-change .total {
+  margin: 0;
+}
+
+.timer .form-control {
+  border-radius: 4px;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1) !important;
+  height: 40px;
+}
+
+.placer {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+  padding: 0 15px;
+  height: 40px;
+  font-size: 13px;
+}
+
+.placer-two {
+  height: 35px;
+}
+
+.timer-two {
+  height: 40px;
+}
+
+.modal-map {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin: auto;
 }
