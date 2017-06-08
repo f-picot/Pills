@@ -74,20 +74,32 @@
   justify-content: space-between;
   font-weight: bold;
   margin-top: 10px;
-  border-bottom: 0.3px solid #EFF1F4;
   box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .timepicker {
   padding-bottom: 10px;
+  background-color: white;
 }
 
 .pickers-wrapper {
   width: 80%;
   margin: auto;
+  background-color: white;
 }
 
 .pickers-wrapper-two {
   width: 80%;
-  margin: 20px auto;
+  margin: auto;
+}
+
+.whiter {
+  background-color: white;
+  border-bottom: 0.3px solid #EFF1F4;
+}
+
+.whiter-two {
+  background-color: white;
+  border-bottom: 0.3px solid #EFF1F4;
+  padding-bottom: 42px;
 }
