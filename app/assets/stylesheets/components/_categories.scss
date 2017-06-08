@@ -1,18 +1,21 @@
 #categories-container {
   display:flex;
   justify-content: center;
-  margin-top: 15px;
-  padding: 14px;
-  color: $dark-gray;
+  margin-top: 30px;
+  padding-bottom: 8px
 }
 .category-button {
   background-color: white;
-  color: #D4D4D4;
   padding: 10px 20px;
   border: 1px solid #e2e2e2;
   margin: 0px 10px;
   cursor: pointer;
   border: none;
+  text-transform: uppercase;
+  color: $blue;
+  font-size: 13px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
 .category-button:hover {
@@ -34,7 +37,7 @@
 #pill_name {
   color: $dark-gray;
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
   color: rgba(183, 178, 178, 0.5);
   box-shadow: 0 11px 10px -10px rgba(104, 108, 123, 0.5);
 }

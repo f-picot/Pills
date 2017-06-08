@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_cart
-  layout "payment", only: [ :new ]
+  layout "Paiement", only: [ :new ]
 
   def new
   end
@@ -14,14 +14,13 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @cart.total_cents.to_i, # or amount_pennies
-      description:  "Payment for pills for cart #{@cart.id}",
+      description:  "Paiement du panier #{@cart.id}",
       currency:     @cart.currency
     )
 
     #@order.update(payment: charge.to_json, state: 'paid')
     @cart.update(status: 'paid')
-    redirect_to "/payement-done"
-    # redirect_to pills_path
+    redirect_to pills_path(paid: "yes")
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

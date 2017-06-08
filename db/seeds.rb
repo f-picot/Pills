@@ -97,7 +97,7 @@ exomega = Pill.create!(
 
 actirub = Pill.create!(
   name: "Actirub",
-  brand: "santeverte",
+  brand: "Santeverte",
   description: "Permet de traiter le rhume",
   price: 11.30,
   category: "Bien-être",
@@ -108,8 +108,8 @@ actirub = Pill.create!(
   )
 
 adiaril = Pill.create!(
-  name: "adiaril",
-  brand: "santeverte",
+  name: "Adiaril",
+  brand: "Santeverte",
   description: "Sachets de réhydratation pour les diarrhées du nourrisson",
   price: 5.90,
   category: "Bébés",
@@ -120,8 +120,8 @@ adiaril = Pill.create!(
   )
 
 ergymunil = Pill.create!(
-  name: "ergymunil",
-  brand: "nutergia",
+  name: "Ergymunil",
+  brand: "Nutergia",
   description: "Complexe pour booster votre immunité",
   price: 20.90,
   category: "Immunité",
@@ -133,7 +133,7 @@ ergymunil = Pill.create!(
 
 gallia = Pill.create!(
   name: "Lait infantil Gallia",
-  brand: "gallia",
+  brand: "Gallia",
   description: "Lait infantil pour les nourrissons",
   price: 6.30,
   category: "Bébés",
