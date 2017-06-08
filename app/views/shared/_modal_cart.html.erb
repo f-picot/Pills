@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="cart-products">
-      <% @cart.cart_items.each do |cart_item| %>
+      <% @cart.cart_items.sort.each do |cart_item| %>
         <div class="cart-product">
           <div class="item-picture">
             <%= image_tag cart_item.pill.photo %>
