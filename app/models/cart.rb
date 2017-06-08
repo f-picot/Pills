@@ -1,6 +1,6 @@
 class Cart < ApplicationRecord
   belongs_to :user, optional: true
-  has_many :cart_items
+  has_many :cart_items, dependent: :destroy
   geocoded_by :delivery_location
   after_validation :geocode, if: :delivery_location_changed?
 

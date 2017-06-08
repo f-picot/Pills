@@ -5,7 +5,7 @@
     <div class="map-text">
       <p><%= @cart.delivery_location %></p>
       <p>|</p>
-      <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
+      <p>Livraison prévue à <%= @cart.delivery_time.strftime('%Hh%M') %></p>
       <div class="btn btn-pencil" data-toggle="modal" data-target="#pickers">
         <i class="fa fa-pencil"></i>
       </div>
@@ -41,7 +41,6 @@
 <div class="modal fade" id="pickers">
   <%= render "shared/modal_pickers" %>
 </div>
-
 
 <div class="wrapper">
   <div class="customcontainer">

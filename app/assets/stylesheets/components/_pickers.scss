@@ -6,9 +6,9 @@
   left: 0;
   top: 0;
   color: $blue;
+  overflow: hidden;
   p {
     padding: 0 7px;
-    margin-bottom: 5%;
   }
 }
 
@@ -42,26 +42,9 @@
   width: 0%;
 }
 
-.search-modal .flexbox-demo .submit {
-  border-radius: 0;
-  margin: 0;
-  height: 40px;
-  width: 41px;
-}
-
-.search-modal .flexbox-demo .submit .glyph-size {
-  height: 19px;
-  width: 16px;
-  color: $blue;
-}
-
 .change-delivery-time {
   border-bottom: 0.3px solid #EFF1F4;
   margin-bottom: 20%;
-}
-
-.deasy{
-  margin-top: 5% !important;
 }
 
 .flexbox-demo-modal{
@@ -75,4 +58,36 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.total p {
+  margin: 0;
+}
+
+.cart-change {
+  width: 100%;
+  height: 60px;
+  color: $dark-gray;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+  border-bottom: 0.3px solid #EFF1F4;
+  box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.timepicker {
+  padding-bottom: 10px;
+}
+
+.pickers-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.pickers-wrapper-two {
+  width: 80%;
+  margin: 20px auto;
 }
