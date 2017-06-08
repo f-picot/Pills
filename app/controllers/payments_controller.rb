@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_cart
+  layout "payment", only: [ :new ]
 
   def new
 
