@@ -25,7 +25,7 @@ body {
 
 .subhead{
   text-align: left;
-  padding-left: 10%;
+  padding-left: 0px;
 }
 
 .container .home {
@@ -55,7 +55,6 @@ iframe{
 
 .banner-content {
   margin-top: -100px;
-  margin-left: 5%;
 }
 
 .banner {
@@ -76,12 +75,6 @@ iframe{
   }
 }
 
-// .banner h1 {
-//   font-size: 60px;
-//   font-weight: bold;
-//   color: $blue;
-// }
-
 .banner p {
   font-size: 40px;
   font-weight: lighter;
@@ -97,7 +90,6 @@ iframe{
 .banner-content h1{
   font-family: Muli;
   text-align: left;
-  padding-left: 10%;
   font-weight: bold;
   font-size: 38px;
 }
