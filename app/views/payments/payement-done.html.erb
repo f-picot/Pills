@@ -1,0 +1,328 @@
+<div class="map" id="map" style="width: 100%; height: 300px;"></div>
+
+<div class="order-banner">
+  <div class="pickers">
+    <div class="map-text">
+      <p><%= @cart.delivery_location %></p>
+      <p>|</p>
+      <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
+      <div class="btn btn-pencil" data-toggle="modal" data-target="#pickers">
+        <i class="fa fa-pencil"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="modal-dialog" id="payement-done" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel"><%=pill.name %></h4>
+      </div>
+      <div class="modal-body">
+       <div class="card-picture">
+          <div class="frame-picture">
+              <%= image_tag pill.photo %>
+          </div>
+        </div>
+        <div class="card-lab">
+          <%= image_tag(pill.brandphoto, class: "avatar-bordered") %>
+          <p class="underlined"> <%= pill.brand %> </p>
+
+        </div>
+        <div class="card-description" id="card-description-show">
+          <h2> <%= pill.name %></h2>
+          <p> <%= pill.description  %> </p>
+        </div>
+        <div class="card-order" id="card-order-show">
+          <div class="lastblock">
+            <div class="capacity">
+                <p><%= pill.capacity %>
+            </div>
+            <div class="price">
+              <p>Amount: <%= humanized_money_with_symbol(pill.price) %></p>
+            </div>
+          </div>
+          <div class="cart-control">
+            <% if @cart.cart_items.where(pill_id: pill.id).first %>
+              <%= simple_form_for [pill, @cart.cart_items.where(pill_id: pill.id).first], method: :patch do |f| %>
+                <%= f.hidden_field :cart_id, value: @cart.id %>
+                 <%= button_tag(type: 'submit', class: "divbutton") do %>
+                <span>-</span>
+                <% end %>
+              <% end %>
+            <% end %>
+            <%= simple_form_for [pill, @cart_item] do |f| %>
+              <%= f.hidden_field :cart_id, value: @cart.id %>
+              <%= button_tag(type: 'submit', class: "divbutton") do %>
+             <span>+</span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag pills_path, method: "get", remote: true, id: "search_pill" do %>
+      <div id="search-bar-form" class="flexbox-demo">
+        <%= text_field_tag "pill[name]", "", placeholder: "Chercher un médicament...", class: "search", id: "pill_name" %>
+        <%= button_tag type: 'submit', class: "submit", id: "home_button"  do %>
+            <i class="glyphicon fa fa-search glyph-size"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="categories-container">
+     <% @categories.each do |category| %>
+       <div class="category-button" data-category="<%= category %>"><%= category %></div>
+       <%#= link_to pills_path(category: category), remote: true do  %>
+   <!--     <div>
+         <%#= category %>
+       </div>
+    -->
+       <%# end %>
+     <% end %>
+   </div>
+
+<div class="modal fade" id="pickers">
+  <%= render "shared/modal_pickers" %>
+</div>
+
+
+<div class="wrapper">
+  <div class="customcontainer">
+    <div class="row">
+      <div id="pill-card">
+        <%= render partial: 'cards', collection: @pills, as: :pill %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="mycart">
+  <%= render "shared/modal_cart" %>
+</div>
+
+<div class="modal fade" id="signup">
+  <%= render "devise/registrations/form" %>
+</div>
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).ready(function() {
+
+      $('#datetimepicker3').datetimepicker({
+        format: 'HH:mm',
+      });
+
+      var styles = [
+      {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+        {
+          "saturation": 36
+        },
+        {
+          "color": "#333333"
+        },
+        {
+          "lightness": 40
+        }
+        ]
+      },
+      {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+        {
+          "visibility": "on"
+        },
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 16
+        }
+        ]
+      },
+      {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      },
+      {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+        {
+          "color": "#fefefe"
+        },
+        {
+          "lightness": 20
+        }
+        ]
+      },
+      {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+        {
+          "color": "#fefefe"
+        },
+        {
+          "lightness": 17
+        },
+        {
+          "weight": 1.2
+        }
+        ]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "color": "#f5f5f5"
+        },
+        {
+          "lightness": 20
+        }
+        ]
+      },
+      {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "color": "#f5f5f5"
+        },
+        {
+          "lightness": 21
+        }
+        ]
+      },
+      {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "color": "#dedede"
+        },
+        {
+          "lightness": 21
+        }
+        ]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 17
+        }
+        ]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 29
+        },
+        {
+          "weight": 0.2
+        }
+        ]
+      },
+      {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 18
+        }
+        ]
+      },
+      {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "color": "#ffffff"
+        },
+        {
+          "lightness": 16
+        }
+        ]
+      },
+      {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "color": "#f2f2f2"
+        },
+        {
+          "lightness": 19
+        }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "color": "#e9e9e9"
+        },
+        {
+          "lightness": 17
+        }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+        {
+          "color": "#11CBD7"
+        }
+        ]
+      }
+      ]
+      var handler = Gmaps.build('Google');
+      handler.buildMap( {
+        provider: {
+          styles: styles,
+          scrollwheel: false, zoomControl: false
+        }, internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(8);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  </script>
+<% end %>
