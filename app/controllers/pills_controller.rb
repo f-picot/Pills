@@ -1,5 +1,6 @@
 class PillsController < ApplicationController
   def index
+    @payment_done = true if params[:paid]
     @cart = current_cart
     if params[:search]
       location = Geocoder.search(params[:search])
