@@ -1,11 +1,15 @@
 .order-banner {
   position: absolute;
-  top: 25%;
+  top: 160px;
   width: 100%;
   text-align: center;
   p {
     margin: 0;
   }
+}
+
+.body {
+  position: relative;
 }
 
 .pickers {
@@ -16,7 +20,6 @@
 }
 
 .map {
-  position: relative;
   margin-top: -5%;
   z-index: 0;
   box-shadow: 0 6px 9px -10px rgba(104, 108, 123, 0.5);
