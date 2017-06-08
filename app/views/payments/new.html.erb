@@ -8,13 +8,13 @@
       </div>
       <button type="button" class="btn btn-dismiss"><i class="fa fa-chevron-left"></i></button>
     </div>
-    <div class="cart-info">
+    <div class="cart-infos">
       <div class="cart-content">
         <div class="blue-icon"><i class="fa fa-map-marker"></i></div>
         <p><%= @cart.delivery_location %></p>
       </div>
     </div>
-    <div class="cart-info">
+    <div class="cart-infos">
       <div class="cart-content">
         <div class="blue-icon"><i class="fa fa-clock-o"></i></div>
         <p>Livraison dans <%= @duration %> minutes</p>
@@ -22,7 +22,7 @@
     </div>
     <div class="cart-products">
       <% @cart.cart_items.each do |cart_item| %>
-        <div class="cart-product">
+        <div class="payment-product">
           <div class="item-picture">
             <%= image_tag cart_item.pill.photo %>
           </div>
@@ -37,6 +37,12 @@
       <% end %>
     </div>
     <div class="cart-info">
+      <div class="total underlined">
+        <p>Ajouter d'autres produits</p>
+      </div>
+      <%= link_to "", pills_path %>
+    </div>
+    <div class="cart-infos">
       <div class="cart-content">
         <div class="blue-icon"><i class="fa fa-ambulance"></i></div>
         <p>Frais de livraison</p>

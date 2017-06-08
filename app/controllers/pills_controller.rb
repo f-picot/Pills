@@ -1,6 +1,5 @@
 class PillsController < ApplicationController
   def index
-    # binding.pry
     @cart = current_cart
     if params[:search]
       location = Geocoder.search(params[:search])
@@ -31,7 +30,7 @@ class PillsController < ApplicationController
     @user = User.new
     if params[:pill]
       if params[:pill][:name] != ""
-        @pills = Pill.where("name ILIKE ? OR category ILIKE ?", "%#{params[:pill][:name]}%", "#%{params[:pill][:name]}%")
+        @pills = Pill.where("name ILIKE :query OR category ILIKE :query", query: "%#{params[:pill][:name]}%")
         respond_to do |format|
           format.html { redirect_to pills_path }
           format.js
