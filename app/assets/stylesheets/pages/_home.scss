@@ -202,10 +202,10 @@ iframe{
 
 .about-three{
   font-family: Muli;
-  font-size: 35px;
-  padding-top: 10%;
-  padding-bottom: 5%;
-  color: #9CB5B7;
+  font-size: 30px;
+  padding-top: 8%;
+  padding-bottom: 1%;
+  color: $blue;
 }
 
 
@@ -255,9 +255,9 @@ iframe{
 
 .p-three{
   display: inline-block;
-  font-weight: bold;
+  font-weight: 500;
   color: #9CB5B7;
-  font-size: 30px;
+  font-size: 24px;
   // padding: 15%;
   font-family: Muli;
 }
@@ -801,4 +801,8 @@ iframe{
   z-index: 25000;
   top: -255px;
   right: -145px;
+}
+
+.padded-top{
+  margin-top: 7%;
 }
