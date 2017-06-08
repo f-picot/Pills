@@ -5,12 +5,12 @@
   <button type="button" data-dismiss="modal" class="btn btn-dismiss"><i class="fa fa-times"></i></button>
 </div>
 <div class="delivery-infos">
-  <p>Livraison prévue à <%= @cart.delivery_time.strftime('%H:%M') %></p>
-  <p>au <%= @cart.delivery_location %></p>
+  <p>Livraison prévue à <strong><%= @cart.delivery_time.strftime('%H:%M') %></strong></p>
+  <p>au <strong><%= @cart.delivery_location %></strong></p>
 </div>
 <div class="signup-wrapper">
   <div class="change-delivery-time">
-    <p class="text-center">Modifier l'heure de livraison</p>
+    <p class="text-center underline">Modifier l'heure de livraison</p>
     <%= simple_form_for @cart do |f| %>
       <!-- <div class="form-group"> -->
         <!-- <div class='input-group date' id='datetimepicker3'> -->
@@ -18,14 +18,16 @@
           <!-- <input type='text' class="form-control" /> -->
         <!-- </div> -->
       <!-- </div> -->
-      <%= f.submit %>
+      <div class="flexible text-center">
+      <%= f.submit class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
-  <p class="text-center">Modifier le lieu de livraison</p>
+  <p class="text-center underline deasy">Modifier le lieu de livraison</p>
   <div class="search-modal">
     <%= form_tag(pills_path, method: "get") do %>
-      <div class="flexbox-demo">
-        <%= text_field_tag :search, params[:search], placeholder: "Pick an address...", class: "search", id: "search_place" %>
+      <div class="flexbox-demo-modal">
+        <%= text_field_tag :search, params[:search], placeholder: "Entrer votre adresse de livraison...", class: "search", id: "search_place" %>
         <%= button_tag(type: "submit", class: "submit", id: "home_button") do %>
           <i class="glyphicon glyphicon-map-marker glyph-size"></i>
         <% end %>
