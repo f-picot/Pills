@@ -26,7 +26,7 @@ doliprane = Pill.create!(
 spasfon = Pill.create!(
   name: "Spasfon",
   brand: "Teva",
-  description: "Médicament indiqué contre les spasmes intestinaux",
+  description: "Médicament indiqué pour traiter les spasmes intestinaux",
   price: 2.99,
   category: "Douleurs",
   stock: 50,
@@ -38,7 +38,7 @@ spasfon = Pill.create!(
 aspegic = Pill.create!(
   name: "Aspegic",
   brand: "Sanofi",
-  description: "Médicament indiqués pour traiter les maux de tête",
+  description: "Médicament indiqué pour traiter les maux de tête",
   price: 5.50,
   category: "Douleurs",
   stock: 70,
@@ -50,7 +50,7 @@ aspegic = Pill.create!(
 smecta = Pill.create!(
   name: "Smecta",
   brand: "Ipsen",
-  description: "Médicament pour traiter la diarrhée",
+  description: "Médicament indiqué pour traiter la diarrhée",
   price: 4.35,
   category: "Digestion",
   stock: 40,
@@ -62,7 +62,7 @@ smecta = Pill.create!(
 strepsils = Pill.create!(
   name: "Strepsils",
   brand: "Reckitt Benckiser",
-  description: "Médicament pour les maux de gorge",
+  description: "Médicament pour traiter les maux de gorge",
   price: 5.20,
   category: "Douleurs",
   stock: 80,
@@ -86,25 +86,25 @@ cotopads = Pill.create!(
 exomega = Pill.create!(
   name: "Exomega",
   brand: "Aderma",
-  description: "Permet de traiter les sécheresses de peau",
+  description: "Une crème pour traiter les sécheresses de peau",
   price: 10.90,
   category: "Hydratant",
   stock: 80,
   photo: "exomega.png",
   brandphoto: "aderma.png",
-  capacity: "100 mL"
+  capacity: "100 ML"
   )
 
 actirub = Pill.create!(
   name: "Actirub",
   brand: "Santeverte",
-  description: "Permet de traiter le rhume",
+  description: "Complexe de plante permettant de traiter le rhume",
   price: 11.30,
   category: "Bien-être",
   stock: 80,
   photo: "actirub.png",
   brandphoto: "santeverte.png",
-  capacity: "15 sachets"
+  capacity: "15 SACHETS"
   )
 
 adiaril = Pill.create!(
@@ -116,31 +116,31 @@ adiaril = Pill.create!(
   stock: 80,
   photo: "adiaril.png",
   brandphoto: "santeverte.png",
-  capacity: "125 g le sachet"
+  capacity: "125 G PAR SACHET"
   )
 
 ergymunil = Pill.create!(
   name: "Ergymunil",
   brand: "Nutergia",
-  description: "Complexe pour booster votre immunité",
+  description: "Complexe de plantes pour booster votre immunité",
   price: 20.90,
   category: "Immunité",
   stock: 80,
   photo: "ergymunyl.png",
   brandphoto: "nutergia.png",
-  capacity: "150 mL"
+  capacity: "150 ML"
   )
 
 gallia = Pill.create!(
-  name: "Lait infantil Gallia",
+  name: "Lait infantile Gallia",
   brand: "Gallia",
-  description: "Lait infantil pour les nourrissons",
+  description: "Lait infantile 1er âge pour les nourrissons",
   price: 6.30,
   category: "Bébés",
   stock: 80,
   photo: "gallialait.png",
   brandphoto: "gallia.png",
-  capacity: "500 mg"
+  capacity: "500 MG"
   )
 
 suppo = Pill.create!(
@@ -152,7 +152,7 @@ suppo = Pill.create!(
   stock: 80,
   photo: "suppositoires-glycerine.png",
   brandphoto: "ipsen.png",
-  capacity: "24 suppos"
+  capacity: "24 SUPPOSITOIRES"
   )
 
 puts "Pills seeded"
