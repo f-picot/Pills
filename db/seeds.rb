@@ -80,7 +80,7 @@ cotopads = Pill.create!(
   stock: 80,
   photo: "cotopads.png",
   brandphoto: "lohmann.png",
-  capacity: "500 Pièces"
+  capacity: "500 PIECES"
   )
 
 exomega = Pill.create!(
