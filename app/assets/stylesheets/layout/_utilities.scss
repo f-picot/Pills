@@ -53,5 +53,28 @@ h1 h2 h3 p{
 
 .promis{
   text-align: center;
-  padding-top: 5%;
+  font-family: "Helvetica";
+  font-weight: lighter;
+  h3 {
+    margin-top: 11px;
+  }
+}
+
+.social {
+  padding-bottom: 5%;
+}
+
+.form-inputs {
+  font-family: "Helvetica";
+  font-weight: lighter;
+}
+
+.form-actions {
+  font-family: "Helvetica";
+  font-weight: lighter;
+}
+
+.forgotten {
+  font-family: "Helvetica";
+  font-weight: lighter;
 }
