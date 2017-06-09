@@ -87,7 +87,6 @@
   background-color: white;
   border-bottom: 0.3px solid #EFF1F4;
   padding-bottom: 42px;
-  margin-bottom: 20px;
 }
 
 .modal{
@@ -122,6 +121,7 @@
   padding: 0 15px;
   height: 40px;
   font-size: 13px;
+  color: rgba(183, 178, 178, 0.5);
 }
 
 .placer-two {
@@ -130,9 +130,9 @@
 
 .timer-two {
   height: 40px;
+  width: 100%;
 }
 
-.modal-map {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  margin: auto;
+.timer-two:hover {
+  color: white;
 }
