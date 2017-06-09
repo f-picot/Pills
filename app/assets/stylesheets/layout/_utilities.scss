@@ -32,3 +32,22 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+.mark-bg{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 380px;
+  bottom: 0;
+  img{
+    background-size: cover !important;
+    width: calc(100vw - 380px);
+    height: 100vh;
+    object-fit: cover;
+  }
+}
+
+.promis{
+  text-align: center;
+  padding-top: 5%;
+}
