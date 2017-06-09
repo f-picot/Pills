@@ -21,4 +21,5 @@ class Cart < ApplicationRecord
       self.cart_items.first.pill.price.currency
     end
   end
+
 end
