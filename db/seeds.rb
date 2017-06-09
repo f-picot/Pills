@@ -155,4 +155,29 @@ suppo = Pill.create!(
   capacity: "24 SUPPOSITOIRES"
   )
 
+fruits = Pill.create!(
+  name: "Fruits & Fibres",
+  brand: "Fruits",
+  description: "Fruits & Fibres Transit est un complément alimentaire sous forme de cubes",
+  price: 13.40,
+  category: "Constipation",
+  stock: 80,
+  photo: "fruitsetfibres.png",
+  brandphoto: "ipsen.png",
+  capacity: "12 CARRES"
+  )
+
+fruits = Pill.create!(
+  name: "Dulcolax",
+  brand: "Merck",
+  description: "Des comprimés efficaces pour traiter la constipation",
+  price: 13.40,
+  category: "Constipation",
+  stock: 80,
+  photo: "Dulcolax",
+  brandphoto: "ipsen.png",
+  capacity: "16 COMPRIMES"
+  )
+
+
 puts "Pills seeded"
