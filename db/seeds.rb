@@ -162,7 +162,7 @@ fruits = Pill.create!(
   price: 13.40,
   category: "Constipation",
   stock: 80,
-  photo: "fruitsetfibres.png",
+  photo: "Fruitsetfibres.png",
   brandphoto: "ipsen.png",
   capacity: "12 CARRES"
   )
@@ -174,7 +174,7 @@ fruits = Pill.create!(
   price: 13.40,
   category: "Constipation",
   stock: 80,
-  photo: "Dulcolax",
+  photo: "dulcolax.png",
   brandphoto: "ipsen.png",
   capacity: "16 COMPRIMES"
   )
